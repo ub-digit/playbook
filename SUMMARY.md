@@ -1,4 +1,4 @@
 # Summary
 
-* Capistrano
+* [introduction](README.md)
 
