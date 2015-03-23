@@ -1,5 +1,5 @@
 # Summary
 
 * [Om](README.md)
-* Capistrano
+* [Capistrano](capistrano.md)
 
