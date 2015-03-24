@@ -71,3 +71,21 @@ end
 
 set :branch, get_tag # Sets branch according to given tag
 ```
+
+### Deply kommandon
+För att kolla så att uppsättning fungerar:
+```
+cap deply:setup
+```
+
+För att kolla så att inga rättigheter eller liknande saknas:
+```
+cap deploy:check
+```
+
+För att köra deploy:
+```
+cap deploy
+```
+
+
