@@ -39,3 +39,11 @@ Filerna i **deploy** mappen (production.rb et c.) representerar var sin environm
 
 ### Capistrano settings
 Nedan följer ett antal standardinställningar som kan användas i **deploy.rb** eller i **deploy/**
+
+```
+# Set the application name
+set :application, 'dFlow'
+
+# Set the repository link
+set :repo_url, 'git@github.com:ub-digit/dFlow.git'
+```
