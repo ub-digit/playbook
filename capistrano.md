@@ -33,4 +33,4 @@ capify .
 >capify skapar filerna /Capfile, /config/deploy.rb samt /config/deploy/production.rb
 
 ### Inställningar
-Filerna i **deploy** mappen (production.rb et c.) representerar var sin environment, och bör ha ett 1-1 förhållande med antal filer i **environments**
+Filerna i **deploy** mappen (production.rb et c.) representerar var sin environment, och bör ha en motsvarande fil i **environments**.
