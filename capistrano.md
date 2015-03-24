@@ -3,6 +3,10 @@ Capistrano är ett verktyg för automatisering av deploys samt andra tasks som m
 
 Capistrano kan användas för alla typer av projekt, och är inte bundet till Ruby och/eller Rails specifika projekt.
 
+Capistrano deployar via ssh till angiven remote host, därmed bör lämpliga nycklar existera:
+1. Till remote-host från anropande maskin
+2. Till Git-server från remote-host
+
 ## Dokumentation
 http://capistranorb.com - Officiell dokumentation för Capistrano v3+
 ## Capistrano för rails
