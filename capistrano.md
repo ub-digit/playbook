@@ -7,3 +7,11 @@ Capistrano kan användas för alla typer av projekt, och är inte bundet till Ru
 För Rails finns ett specifikt gem 'capistrano-rails'.
 
 ###Installation
+Lägg till följande i Gemfile:
+```
+group :development do
+  gem 'capistrano',  '~> 3.4.0'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-passenger' #For passenger specific projects
+end
+```
