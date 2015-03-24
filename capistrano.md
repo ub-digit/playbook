@@ -34,3 +34,4 @@ capify .
 
 ### Inställningar
 Filerna i **deploy** mappen (production.rb et c.) representerar var sin environment, och bör ha en motsvarande fil i **environments**.
+
