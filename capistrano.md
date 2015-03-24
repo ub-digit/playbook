@@ -3,6 +3,8 @@ Capistrano är ett verktyg för automatisering av deploys samt andra tasks som m
 
 Capistrano kan användas för alla typer av projekt, och är inte bundet till Ruby och/eller Rails specifika projekt.
 
+## Dokumentation
+http://capistranorb.com - Officiell dokumentation för Capistrano v3+
 ## Capistrano för rails
 För Rails finns ett specifikt gem 'capistrano-rails'.
 
