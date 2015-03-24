@@ -17,3 +17,4 @@ group :development do
   gem 'capistrano-passenger' #For passenger specific projects
 end
 ```
+
