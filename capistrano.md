@@ -50,6 +50,6 @@ set :repo_url, 'git@github.com:ub-digit/dFlow.git'
 # Set tmp directory on remote host - Default value: '/tmp , which often will not allow files to be executed
 set :tmp_dir, '/home/rails/tmp'
 
-# Copied into /{app}/shared/config from respective sample file
+# Copy originals into /{app}/shared/config from respective sample file
 set :linked_files, %w{config/database.yml config/config_secret.yml config/passwd}
 ```
