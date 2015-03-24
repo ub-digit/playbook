@@ -36,3 +36,6 @@ capify .
 Filerna i **deploy** mappen (production.rb et c.) representerar var sin environment, och bör ha en motsvarande fil i **environments**.
 
 **deploy.rb** innehåller standardinställningar för kommandot **cap deploy**, men den kan även lämnas tom och skrivas över från de environment-specifika filerna i mapppen **deploy**.
+
+### Capistrano settings
+Nedan följer ett antal standardinställningar som kan användas i **deploy.rb** eller i **deploy/**
