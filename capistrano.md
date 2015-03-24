@@ -20,3 +20,17 @@ group :development do
 end
 ```
 
+Installera nya paket
+```
+bundle install
+```
+
+Skapa Capistrano configurationsfiler:
+```
+cd /path/to/your/project
+capify .
+```
+>capify skapar filerna /Capfile, /config/deploy.rb samt /config/deploy/production.rb
+
+### Inställningar
+Filerna i **deploy** mappen (production.rb et c.) representerar var sin environment, och bör ha ett 1-1 förhållande med antal filer i **environments**
