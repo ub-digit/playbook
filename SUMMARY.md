@@ -9,5 +9,5 @@
        * [FactoryGirl](factorygirl.md)
    * [Konfigurationsfiler](konfigurationsfiler.md)
    * [API](api.md)
-       * Versionshantering
+       * [Versionshantering](versionshantering.md)
 
