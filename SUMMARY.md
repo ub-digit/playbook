@@ -5,7 +5,7 @@
 * [Git](git.md)
 * [Rails](rails.md)
    * [Testning](rails/testning.md)
-       * [Shoulda](shoulda.md)
+       * [Shoulda](rails/testning/shoulda.md)
        * [FactoryGirl](rails/testning/factorygirl.md)
    * [Konfigurationsfiler](rails/konfigurationsfiler.md)
    * [API](rails/api.md)
