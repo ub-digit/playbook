@@ -12,4 +12,5 @@
        * [Versionshantering](versionshantering.md)
        * [Dokumentation](dokumentation.md)
        * [Formattering av svar](formattering_av_svar.md)
+   * Deployment
 
