@@ -6,5 +6,5 @@
 * [Rails](rails.md)
    * [Testning](testning.md)
        * [Shoulda](shoulda.md)
-       * FactoryGirl
+       * [FactoryGirl](factorygirl.md)
 
