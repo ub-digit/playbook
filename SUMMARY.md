@@ -4,7 +4,7 @@
 * [Capistrano](capistrano.md)
 * [Git](git.md)
 * [Rails](rails.md)
-   * [Testning](testning.md)
+   * [Testning](rails/testning.md)
        * [Shoulda](shoulda.md)
        * [FactoryGirl](factorygirl.md)
    * [Konfigurationsfiler](konfigurationsfiler.md)
