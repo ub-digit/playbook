@@ -10,5 +10,5 @@
    * [Konfigurationsfiler](konfigurationsfiler.md)
    * [API](api.md)
        * [Versionshantering](versionshantering.md)
-       * Dokumentation
+       * [Dokumentation](dokumentation.md)
 
