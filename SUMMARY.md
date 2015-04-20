@@ -8,5 +8,5 @@
        * [Shoulda](shoulda.md)
        * [FactoryGirl](factorygirl.md)
    * [Konfigurationsfiler](konfigurationsfiler.md)
-   * API
+   * [API](api.md)
 
