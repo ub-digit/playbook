@@ -2,5 +2,5 @@
 
 * [Om](README.md)
 * [Capistrano](capistrano.md)
-* Git
+* [Git](git.md)
 
