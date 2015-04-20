@@ -1,2 +1,0 @@
-# Formattering av svar
-
