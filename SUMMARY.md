@@ -11,5 +11,5 @@
    * [API](api.md)
        * [Versionshantering](versionshantering.md)
        * [Dokumentation](dokumentation.md)
-       * Formattering av svar
+       * [Formattering av svar](formattering_av_svar.md)
 
