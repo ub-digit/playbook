@@ -14,6 +14,6 @@
        * [Formattering av svar](formattering_av_svar.md)
    * [Deployment](deployment.md)
 * Ember-CLI
-   * Språkhantering
+   * [Språkhantering](sprakhantering.md)
    * Testning
 
