@@ -7,7 +7,7 @@
    * [Testning](rails/testning.md)
        * [Shoulda](shoulda.md)
        * [FactoryGirl](rails/testning/factorygirl.md)
-   * [Konfigurationsfiler](konfigurationsfiler.md)
+   * [Konfigurationsfiler](rails/konfigurationsfiler.md)
    * [API](api.md)
        * [Versionshantering](versionshantering.md)
        * [Dokumentation](dokumentation.md)
