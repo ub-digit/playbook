@@ -4,5 +4,5 @@
 * [Capistrano](capistrano.md)
 * [Git](git.md)
 * [Rails](rails.md)
-   * Testning
+   * [Testning](testning.md)
 
