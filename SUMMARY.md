@@ -12,7 +12,7 @@
        * [Versionshantering](versionshantering.md)
        * [Dokumentation](dokumentation.md)
        * [Formattering av svar](formattering_av_svar.md)
-   * [Deployment](deployment.md)
+   * [Deployment](rails/deployment.md)
 * [Ember-CLI](ember-cli.md)
    * [Språkhantering](sprakhantering.md)
    * [Testning](ember/testning.md)
