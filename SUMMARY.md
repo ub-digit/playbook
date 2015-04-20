@@ -16,4 +16,5 @@
 * [Ember-CLI](ember-cli.md)
    * [Språkhantering](ember/sprakhantering.md)
    * [Testning](ember/testning.md)
+   * Deployment
 
