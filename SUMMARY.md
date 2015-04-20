@@ -15,4 +15,5 @@
    * [Deployment](deployment.md)
 * Ember-CLI
    * Språkhantering
+   * Testning
 
