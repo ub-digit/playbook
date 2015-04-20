@@ -18,5 +18,5 @@
    * [Testning](ember/testning.md)
    * [Deployment](ember/deployment.md)
    * [Less](ember/less.md)
-* Definition of Done
+* [Definition of Done](definition_of_done.md)
 
