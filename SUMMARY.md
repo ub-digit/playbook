@@ -14,6 +14,6 @@
        * [Formattering av svar](rails/api/formattering_av_svar.md)
    * [Deployment](rails/deployment.md)
 * [Ember-CLI](ember-cli.md)
-   * [Språkhantering](sprakhantering.md)
+   * [Språkhantering](ember/sprakhantering.md)
    * [Testning](ember/testning.md)
 
