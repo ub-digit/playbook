@@ -8,7 +8,7 @@
        * [Shoulda](shoulda.md)
        * [FactoryGirl](rails/testning/factorygirl.md)
    * [Konfigurationsfiler](rails/konfigurationsfiler.md)
-   * [API](api.md)
+   * [API](rails/api.md)
        * [Versionshantering](versionshantering.md)
        * [Dokumentation](dokumentation.md)
        * [Formattering av svar](formattering_av_svar.md)
