@@ -17,4 +17,5 @@
    * [Språkhantering](ember/sprakhantering.md)
    * [Testning](ember/testning.md)
    * [Deployment](ember/deployment.md)
+* Definition of Done
 
