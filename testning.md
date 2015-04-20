@@ -20,7 +20,7 @@ För att generera testfiler för ex ett Model-objekt separat, använd följande 
 ```
 rails generate rspec:model MyModel
 ```
-Kör testsviten
+För att köra hela testsviten
 ```
 bundle exec rspec
 ```
