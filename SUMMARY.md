@@ -10,7 +10,7 @@
    * [Konfigurationsfiler](rails/konfigurationsfiler.md)
    * [API](rails/api.md)
        * [Versionshantering](rails/api/versionshantering.md)
-       * [Dokumentation](dokumentation.md)
+       * [Dokumentation](rails/api/dokumentation.md)
        * [Formattering av svar](formattering_av_svar.md)
    * [Deployment](rails/deployment.md)
 * [Ember-CLI](ember-cli.md)
