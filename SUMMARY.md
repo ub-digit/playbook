@@ -7,4 +7,5 @@
    * [Testning](testning.md)
        * [Shoulda](shoulda.md)
        * [FactoryGirl](factorygirl.md)
+   * Konfigurationsfiler
 
