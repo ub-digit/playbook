@@ -9,7 +9,7 @@
        * [FactoryGirl](rails/testning/factorygirl.md)
    * [Konfigurationsfiler](rails/konfigurationsfiler.md)
    * [API](rails/api.md)
-       * [Versionshantering](versionshantering.md)
+       * [Versionshantering](rails/api/versionshantering.md)
        * [Dokumentation](dokumentation.md)
        * [Formattering av svar](formattering_av_svar.md)
    * [Deployment](rails/deployment.md)
