@@ -32,7 +32,7 @@ bundle install
 Skapa Capistrano configurationsfiler:
 ```
 cd /path/to/your/project
-capify .
+cap install
 ```
 >capify skapar filerna /Capfile, /config/deploy.rb samt /config/deploy/production.rb
 
