@@ -99,7 +99,7 @@ set :branch, get_tag # Sets branch according to given tag
 ### Skapa environment för deploy
 >**OBS: Kom ihåg att alla filer som innehåller känslig information (servernamn / användarnamn ex.) inte ska checkas in i repositoriet. Skapa isf sample-filer (config/deploy/production.rb.sample) som checkas in utan denna information.**
 
-I exemplet nedan skapar vi en environment för en testserver, som vi föper till **demo**. Detta då **test** används inom rails för att köra testsviten.
+I exemplet nedan skapar vi en environment för en testserver, som vi döper till **demo**. Detta då **test** används inom rails för att köra testsviten.
 
 #### Uppdatera production.rb
 Kommentera ut raden **config.assets.js_compressor = :uglifier
