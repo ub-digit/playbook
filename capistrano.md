@@ -21,6 +21,8 @@ group :development do
   gem 'capistrano',  '~> 3.4.0'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-passenger' #For passenger specific projects
+  gem 'capistrano-bundler', '~> 1.1.2' #To be able to run bundle install on deploy
+  gem 'rvm-capistrano' # För att hantera ruby version vid deploy
 end
 ```
 
@@ -34,14 +36,28 @@ Skapa Capistrano configurationsfiler:
 cd /path/to/your/project
 cap install
 ```
->capify skapar filerna /Capfile, /config/deploy.rb samt /config/deploy/production.rb
+>cap install skapar filerna: 
 
-### Inställningar
+>/Capfile
+
+>/config/deploy.rb
+
+>/config/deploy/production.rb
+
+### Capistrano Inställningar
+I **Capfile** definieras beroenden som ska inkluderas i Capistrano. I vårat exempel tar vi med följande paket:
+
+* require 'capistrano/setup'
+* require 'capistrano/deploy'
+* require 'capistrano/bundler'
+* require 'capistrano/rails/migrations'
+* require 'capistrano/passenger'
+
 Filerna i **deploy** mappen (production.rb et c.) representerar var sin environment, och bör ha en motsvarande fil i **environments**.
 
 **deploy.rb** innehåller standardinställningar för kommandot **cap deploy**, men den kan även lämnas tom och skrivas över från de environment-specifika filerna i mapppen **deploy**.
 
-### Capistrano settings
+### Deploy inställningar
 Nedan följer ett antal standardinställningar som kan användas i **deploy.rb** eller i **deploy/**
 
 ```
@@ -60,6 +76,8 @@ set :linked_files, %w{config/database.yml config/config_secret.yml config/passwd
 server 'stagingserver.com', user: 'user', roles: %w{app db web}
 
 set :deploy_to, '/remote/path/to/app'
+
+set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
 
 # Forces user to assign a valid tag for deploy
 def get_tag
