@@ -148,7 +148,7 @@ De konfig-filer som inte ligger i repositoriet med korrekta värden, måste kopi
 I exemplet nedan ska vi ange database.yml som delad fil.
 
 ##### Kopiera över filen
-Kopiera filen till servern enligt mappstrukturen **<deploy_to>/shared/config/database.yml**
+Kopiera filen till servern enligt mappstrukturen **&lt;deploy_to&gt;/shared/config/database.yml**
 
 #### Ange filen som linked_file
 Lägg till nedanstående i **deploy.rb**
