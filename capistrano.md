@@ -113,8 +113,11 @@ Kopiera **config/environments/production.rb** till **config/environments/lab.rb*
 #### Skapa environment i secrets-fil
 Kopiera **production** elementet i **config/secrets.yml** och döp om det kopierade elementet till **lab:**
 
+#### Skapa environment i database-fil
+Kopiera **production** elementet i **config/database.yml** och döp om det kopierade elementet till **lab:**. Uppdatera med korrekta uppgifter.
+
 #### Skapa Capistrano environment
-Nästa steg är att skapa en mCapistrano environment som överensstämmer med den Rails-environment vi just har skapat.
+Nästa steg är att skapa en Capistrano environment som överensstämmer med den Rails-environment vi just har skapat.
 
 Kopiera därmed **config/deploy/production.rb** som **config/deploy/lab.rb**
 
