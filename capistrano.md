@@ -126,7 +126,7 @@ Uppdatera konfig filen med gällande servernamn, användarnamn och deploy sökv�
 Lägg till SSH nycklar för att slippa logga in under deploy.
 
 #### Skapa tmp mapp på servern ifall sådan ej existerar.
-Då Capistrano deployar genom att skapa ed .sh fil, ladda upp denna till servern och sedan exekvera denna, behövs en tmp-mapp som den aktuella användaren har rätt att köra skriptet från.
+Då Capistrano deployar genom att skapa en .sh fil, ladda upp denna till servern och sedan exekvera denna, behövs en tmp-mapp som den aktuella användaren har rätt att köra skriptet från.
 
 Denna läggs lämpligen i användarens hem-katalog. 
 
