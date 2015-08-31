@@ -105,6 +105,8 @@ I exemplet nedan skapar vi en environment för en testserver, som vi döper till
 Kommentera ut raden **config.assets.js_compressor = :uglifier
 ** ifall den finns i **config/environments/production.rb**
 
+Sätt **config.serve_static_files = true** i samma fil.
+
 #### Skapa environment fil
 Kopiera **config/environments/production.rb** till **config/environments/lab.rb**
 
