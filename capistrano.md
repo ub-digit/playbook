@@ -38,11 +38,11 @@ cap install
 ```
 >cap install skapar filerna: 
 
->/Capfile
+>Capfile
 
->/config/deploy.rb
+>config/deploy.rb
 
->/config/deploy/production.rb
+>config/deploy/production.rb
 
 ### Capistrano Inställningar
 I **Capfile** definieras beroenden som ska inkluderas i Capistrano. I vårat exempel tar vi med följande paket:
@@ -59,6 +59,8 @@ Filerna i **deploy** mappen (production.rb et c.) representerar var sin environm
 
 ### Deploy inställningar
 Nedan följer ett antal standardinställningar som kan användas i **deploy.rb** eller i **deploy/**
+
+Förslagsvis läggs alla inställningar som är generella för applikationen i **config/deploy.rb**
 
 ```
 # Set the application name
@@ -94,20 +96,23 @@ end
 set :branch, get_tag # Sets branch according to given tag
 ```
 
+### Skapa environment för deploy
+
+
 ### Deply kommandon
 För att kolla så att uppsättning fungerar:
 ```
-cap deply:setup
+cap <environment> deploy:setup
 ```
 
 För att kolla så att inga rättigheter eller liknande saknas:
 ```
-cap deploy:check
+cap <environment> deploy:check
 ```
 
 För att köra deploy:
 ```
-cap deploy
+cap <environment> deploy
 ```
 
 
