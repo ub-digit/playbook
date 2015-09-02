@@ -158,10 +158,6 @@ Lägg till nedanstående i **deploy.rb**
 `set :linked_files, %w{config/database.yml}`
 
 ### Deploy kommandon
-För att kolla så att uppsättning fungerar:
-```
-cap <environment> deploy:setup
-```
 
 För att kolla så att inga rättigheter eller liknande saknas:
 ```
