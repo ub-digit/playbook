@@ -8,7 +8,7 @@
  FUNKTION: "login", "logout", "serviceValidate"
 </pre>
 
-
+ 
 ## Länk till inloggning
 
 Länken byggs helt enkelt upp enligt:
