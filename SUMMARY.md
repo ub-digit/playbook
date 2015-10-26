@@ -20,4 +20,5 @@
    * [Less](ember/less.md)
    * [CAS](ember/cas.md)
 * [Definition of Done](definition_of_done.md)
+* Selenium
 
