@@ -30,7 +30,7 @@ Installera nya paket
 ```
 bundle install
 ```
-
+JAvG
 Skapa Capistrano configurationsfiler:
 ```
 cd /path/to/your/project
