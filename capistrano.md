@@ -25,12 +25,12 @@ group :development do
   gem 'capistrano-rvm' # För att hantera ruby version vid deploy
 end
 ```
-
+xmagnn
 Installera nya paket
 ```
 bundle install
 ```
-JAvG
+
 Skapa Capistrano configurationsfiler:
 ```
 cd /path/to/your/project
