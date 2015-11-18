@@ -22,4 +22,5 @@
 * [Definition of Done](definition_of_done.md)
 * Selenium
    * [Rspec](selenium/rspec.md)
+* Solr
 
