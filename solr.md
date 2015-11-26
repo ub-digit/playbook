@@ -20,3 +20,60 @@
 6. I sektionen "Core Admin", välj CORENAME och klicka på "Reload"-knappen
 
 Vid senare förändringar av schema.xml, kör stegen 4-6 ovan.
+
+## Begränsa access till solr-index baserat på IP-nummer
+Editera ```${SOLR_HOME}/server/etc/jetty.xml``` stoppa in ett konfigurationsavsnitt om IPAccessHandler
+och referera till detta i befintligt avsnitt med rubriken *Set handler Collection Structure*.
+I och med detta har vi en black-list som utestänger alla IP-adresser samt en white-list som tillåter endast
+de utpekde IP-numren att ansluta till solr-serverns webbgränssnitt och ställa frågor gentemot solr-indexet.
+
+    <!-- =========================================================== -->
+    <!-- Configure IPAccessHandler                                   --> 
+    <!-- =========================================================== -->
+    <New id="IPAccessHandler" class="org.eclipse.jetty.server.handler.IPAccessHandler">
+      <Call name="addWhite">
+        <Arg>127.0.0.1</Arg>  <!-- Localhost -->
+      </Call>
+      <Call name="addWhite">
+        <Arg>192.168.0.100</Arg>   <!-- IP address of server 1 -->
+      </Call>
+      <Call name="addWhite">
+        <Arg>192.168.0.101</Arg>   <!-- IP address of server 2 -->
+      </Call>
+      <Call name="addWhite">
+        <Arg>192.168.0.102</Arg>   <!-- IP address of server 3 -->
+      </Call>
+      <Call name="addWhite">
+        <Arg>192.168.0.103</Arg>   <!-- IP address of server 4 -->
+      </Call>
+      <Set name="handler">
+        <New id="Contexts" class="org.eclipse.jetty.server.handler.ContextHandlerCollection"/>
+      </Set>
+    </New>    
+
+    <!-- =========================================================== -->
+    <!-- Set handler Collection Structure                            -->
+    <!-- =========================================================== -->
+    <Set name="handler">
+      <New id="Handlers" class="org.eclipse.jetty.server.handler.HandlerCollection">
+        <Set name="handlers">
+         <Array type="org.eclipse.jetty.server.Handler">
+           <Item>
+             <Ref id="RewriteHandler"/>
+           </Item>
+           <Item>
+             <Ref id="IPAccessHandler"/>
+           </Item>
+           <Item>
+             <New id="Contexts" class="org.eclipse.jetty.server.handler.ContextHandlerCollection"/>
+           </Item>
+           <Item>
+             <New id="DefaultHandler" class="org.eclipse.jetty.server.handler.DefaultHandler"/>
+           </Item>
+           <Item>
+             <New id="RequestLog" class="org.eclipse.jetty.server.handler.RequestLogHandler"/>
+           </Item>
+         </Array>
+        </Set>
+      </New>
+    </Set>
