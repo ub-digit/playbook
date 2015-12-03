@@ -24,4 +24,5 @@
    * [Rspec](selenium/rspec.md)
 * [Solr](solr.md)
 * Ruby
+   * Gems
 
