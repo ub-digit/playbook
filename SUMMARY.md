@@ -3,6 +3,8 @@
 * [Om](README.md)
 * [Capistrano](capistrano.md)
 * [Git](git.md)
+* Ruby
+   * [Gems](ruby/gems.md)
 * [Rails](rails.md)
    * [Testning](rails/testning.md)
        * [Shoulda](rails/testning/shoulda.md)
@@ -23,6 +25,4 @@
 * Selenium
    * [Rspec](selenium/rspec.md)
 * [Solr](solr.md)
-* Ruby
-   * [Gems](ruby/gems.md)
 
