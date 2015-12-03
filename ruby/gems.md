@@ -157,10 +157,10 @@ Att bygga paketet är enkelt, men först ska man se till att testerna går igeno
 
 1. ```bundle``` för att installera eventuella beroenden
 2. ```rake``` för att köra testerna
-3. ```gem build my_gem_name.gemspec``` som bygger en ```my_gem_name-0.1.0.gem```
+3. ```gem build my_gem_name.gemspec``` som bygger en ```my_gem_name-0.0.1.gem```
 
 # Skicka paketet till rubygems.org (det blir då publikt tillgängligt)
 
 För att skicka till rubygems.org behöver man ett konto där. Det fixar man via en webbläsare.
 
-När man har konto och paketet är byggt så kör man ```gem push my_gem_name-0.1.0.gem```, svarar på inloggningsfrågorna och sedan är det klart och publicerat.
+När man har konto och paketet är byggt så kör man ```gem push my_gem_name-0.0.1.gem```, svarar på inloggningsfrågorna och sedan är det klart och publicerat.
