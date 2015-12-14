@@ -30,4 +30,3 @@
       * [Rspec](selenium/rspec.md)
 * Arbetssätt
    * [Definition of Done](definition_of_done.md)
-
