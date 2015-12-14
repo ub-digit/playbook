@@ -26,7 +26,7 @@
 * [Solr](solr.md)
 * GitHub
     * [Git](git.md)
-* Rails
+* [Rails](rails.md)
 * Ember
 * Verktyg
 * Arbetssätt
