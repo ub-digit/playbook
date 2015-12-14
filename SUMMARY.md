@@ -29,4 +29,5 @@
 * Rails
 * Ember
 * Verktyg
+* Arbetssätt
 
