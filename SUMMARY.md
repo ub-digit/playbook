@@ -1,7 +1,7 @@
 # Summary
 
 * [Om](README.md)
-* [Capistrano](capistrano.md)
+
 
 
 * [Ember-CLI](ember-cli.md)
@@ -21,6 +21,7 @@
        * [Dokumentation](rails/api/dokumentation.md)
        * [Formattering av svar](rails/api/formattering_av_svar.md)
    * [Deployment](rails/deployment.md)
+      * [Capistrano](capistrano.md)
    * Ruby
       * [Gems](ruby/gems.md)
 * [Ember](ember-cli.md)
