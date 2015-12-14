@@ -5,11 +5,7 @@
 
 
 * [Ember-CLI](ember-cli.md)
-   * [Språkhantering](ember/sprakhantering.md)
-   * [Testning](ember/testning.md)
-   * [Deployment](ember/deployment.md)
-   * [Less](ember/less.md)
-   * [CAS](ember/cas.md)
+   
 * [Definition of Done](definition_of_done.md)
 * Selenium
    * [Rspec](selenium/rspec.md)
@@ -29,6 +25,11 @@
    * Ruby
     * [Gems](ruby/gems.md)
 * Ember
+   * [Språkhantering](ember/sprakhantering.md)
+   * [Testning](ember/testning.md)
+   * [Deployment](ember/deployment.md)
+   * [Less](ember/less.md)
+   * [CAS](ember/cas.md)
 * Verktyg
 * Arbetssätt
 
