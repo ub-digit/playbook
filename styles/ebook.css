@@ -3,6 +3,14 @@
     color: green !important;
 }
 
-.gub-policy + blockquote,ol,ul{
+.gub-policy + blockquote {
+    color: green !important;
+}
+
+.gub-policy + ol {
+    color: green !important;
+}
+
+.gub-policy + ul {
     color: green !important;
 }
