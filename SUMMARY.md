@@ -1,9 +1,7 @@
 # Summary
 
 * [Hem](README.md)
-
-
-* GitHub
+* [GitHub](github.md)
    * [Git](git.md)
 * [Rails](rails.md)
    * [Testning](rails/testning.md)
@@ -15,9 +13,9 @@
        * [Dokumentation](rails/api/dokumentation.md)
        * [Formattering av svar](rails/api/formattering_av_svar.md)
    * [Deployment](rails/deployment.md)
-      * [Capistrano](capistrano.md)
+       * [Capistrano](capistrano.md)
    * Ruby
-      * [Gems](ruby/gems.md)
+       * [Gems](ruby/gems.md)
 * [Ember](ember-cli.md)
    * [Språkhantering](ember/sprakhantering.md)
    * [Testning](ember/testning.md)
@@ -27,6 +25,7 @@
 * Verktyg
    * [Solr](solr.md)
    * Selenium
-      * [Rspec](selenium/rspec.md)
+       * [Rspec](selenium/rspec.md)
 * Arbetssätt
    * [Definition of Done](definition_of_done.md)
+
