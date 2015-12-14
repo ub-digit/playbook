@@ -4,8 +4,7 @@
 }
 
 .gub-policy + blockquote {
-    color: black !important;
-    border:5px dashed red !important;
+    
 }
 
 .gub-policy + ol {
@@ -14,4 +13,9 @@
 
 .gub-policy + ul {
     color: black !important;
+}
+
+blockquote {
+    color: black !important;
+    border:5px dashed red !important;
 }
