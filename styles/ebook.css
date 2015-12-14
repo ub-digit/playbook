@@ -5,7 +5,7 @@
 
 .gub-policy + blockquote {
     color: green !important;
-    background-color:red;
+    border:3px dashed red;
 }
 
 .gub-policy + ol {
