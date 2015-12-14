@@ -6,7 +6,7 @@
 
 * [Ember-CLI](ember-cli.md)
    
-* [Definition of Done](definition_of_done.md)
+
 
 
 * GitHub
@@ -23,7 +23,7 @@
    * [Deployment](rails/deployment.md)
    * Ruby
       * [Gems](ruby/gems.md)
-* Ember
+* [Ember](ember-cli.md)
    * [Språkhantering](ember/sprakhantering.md)
    * [Testning](ember/testning.md)
    * [Deployment](ember/deployment.md)
@@ -34,4 +34,5 @@
    * Selenium
       * [Rspec](selenium/rspec.md)
 * Arbetssätt
+   * [Definition of Done](definition_of_done.md)
 
