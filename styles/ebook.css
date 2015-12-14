@@ -1,20 +1,3 @@
-
-.gub-policy {
-    color: green !important;
-}
-
-.gub-policy + blockquote {
-    
-}
-
-.gub-policy + ol {
-    color: black !important;
-}
-
-.gub-policy + ul {
-    color: black !important;
-}
-
 blockquote {
     color: black !important;
     background-color:#E5E5E5 !important;
