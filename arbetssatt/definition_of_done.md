@@ -5,22 +5,22 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
 **POLICY - Definition of Done (Förslag enl. 2015-12-11)**
 
 
-* ### Kompletta tester finns
+* ### Kompletta tester finns (oplanerad)
     Komponenttester samt integrationstester ska finnas för samtlig logik i systemet.
 
-* ### Dokumentation uppdaterad
+* ### Dokumentation uppdaterad (oplanerad)
     * Kod ska vara tydlig och dokumenterad
     * APIer ska vara dokumenterade
     * Vid behov ska manualer / applikationsinstruktioner hållas uppdaterade
 
-* ### Peer review genomförd
+* ### Peer review genomförd(oplanerad)
     All kod ska återkopplas från annan utvecklare innan merge sker till master-branch. Detta kan genomföras via **Pull request** eller **Pair programming**.
 
-* ### 100% Code Coverage (Rails)
+* ### 100% Code Coverage (Rails) (oplanerad)
     Samtliga kodrader ska köras under en testsvit för Rails applikationer.
 
-* ### Deploy till testmiljö genomförd
+* ### Deploy till testmiljö genomförd (oplanerad)
     För att testa kodens deploybarhet, samt möjliggöra extern testning, ska all kod deployas till en testmiljö.
 
-* ### Acceptanstester uppfyllda
+* ### Acceptanstester uppfyllda (oplanerad)
     Acceptanstester kan genomföras genom automatiska tester byggda på acceptanskriterier, eller genom testning av Produktägaren.
