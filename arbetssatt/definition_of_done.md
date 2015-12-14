@@ -5,7 +5,7 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
 **POLICY - Definition of Done (Förslag enl. 2015-12-11)**
 
 
-* ### Tester för all logik
+* ### Kompletta tester finns
     Komponenttester samt integrationstester ska finnas för samtlig logik i systemet.
 
 * ### Dokumentation uppdaterad
@@ -14,7 +14,7 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
     * Vid behov ska manualer / applikationsinstruktioner hållas uppdaterade
 
 * ### Peer review genomförd
-    All kod ska återkopplas från annan utvecklare innan merge sker till master-branch.
+    All kod ska återkopplas från annan utvecklare innan merge sker till master-branch. Detta kan genomföras via **Pull request** eller **Pair programming**.
 
 * ### 100% Code Coverage (Rails)
     Samtliga kodrader ska köras under en testsvit för Rails applikationer.
