@@ -1,10 +1,11 @@
 # Summary
 
-* [Om](README.md)
-* [Capistrano](capistrano.md)
-* [Git](git.md)
-* Ruby
-   * [Gems](ruby/gems.md)
+* [Hem](README.md)
+
+---
+
+* [GitHub](github.md)
+   * [Git](git.md)
 * [Rails](rails.md)
    * [Testning](rails/testning.md)
        * [Shoulda](rails/testning/shoulda.md)
@@ -15,14 +16,19 @@
        * [Dokumentation](rails/api/dokumentation.md)
        * [Formattering av svar](rails/api/formattering_av_svar.md)
    * [Deployment](rails/deployment.md)
-* [Ember-CLI](ember-cli.md)
+       * [Capistrano](verktyg/capistrano.md)
+   * Ruby
+       * [Gems](ruby/gems.md)
+* [Ember](ember.md)
    * [Språkhantering](ember/sprakhantering.md)
    * [Testning](ember/testning.md)
    * [Deployment](ember/deployment.md)
    * [Less](ember/less.md)
    * [CAS](ember/cas.md)
-* [Definition of Done](definition_of_done.md)
-* Selenium
-   * [Rspec](selenium/rspec.md)
-* [Solr](solr.md)
+* [Verktyg](verktyg.md)
+   * [Solr](verktyg/solr.md)
+   * Selenium
+       * [Rspec](verktyg/selenium/rspec.md)
+* [Arbetssätt](arbetssatt.md)
+   * [Definition of Done](arbetssatt/definition_of_done.md)
 
