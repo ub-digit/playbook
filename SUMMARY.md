@@ -27,4 +27,5 @@
 * [Solr](solr.md)
 * GitHub
 * Rails
+* Ember
 
