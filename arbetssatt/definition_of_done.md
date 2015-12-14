@@ -27,5 +27,5 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
 
 ## Praktisk hantering
 <p class="gub-policy">
-1. Skapa en **task** för Storyn som heter **Definition of Done**, innehållande den för tillfället rådande definitionen.
+>1. Skapa en **task** för Storyn som heter **Definition of Done**, innehållande den för tillfället rådande definitionen.
 2. Först när **Definition of Done** är uppfylld enligt definitionen flyttas tasken till **Done**.
