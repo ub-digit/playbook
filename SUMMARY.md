@@ -2,8 +2,7 @@
 
 * [Om](README.md)
 * [Capistrano](capistrano.md)
-* Ruby
-   * [Gems](ruby/gems.md)
+
 
 * [Ember-CLI](ember-cli.md)
    * [Språkhantering](ember/sprakhantering.md)
@@ -27,6 +26,8 @@
        * [Dokumentation](rails/api/dokumentation.md)
        * [Formattering av svar](rails/api/formattering_av_svar.md)
    * [Deployment](rails/deployment.md)
+   * Ruby
+   * [Gems](ruby/gems.md)
 * Ember
 * Verktyg
 * Arbetssätt
