@@ -22,7 +22,7 @@
    * [Deployment](ember/deployment.md)
    * [Less](ember/less.md)
    * [CAS](ember/cas.md)
-* Verktyg
+* [Verktyg](verktyg.md)
    * [Solr](solr.md)
    * Selenium
        * [Rspec](selenium/rspec.md)
