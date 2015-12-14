@@ -2,7 +2,6 @@
 
 * [Om](README.md)
 * [Capistrano](capistrano.md)
-* [Git](git.md)
 * Ruby
    * [Gems](ruby/gems.md)
 * [Rails](rails.md)
@@ -26,6 +25,7 @@
    * [Rspec](selenium/rspec.md)
 * [Solr](solr.md)
 * GitHub
+* [Git](git.md)
 * Rails
 * Ember
 * Verktyg
