@@ -13,19 +13,19 @@
        * [Dokumentation](rails/api/dokumentation.md)
        * [Formattering av svar](rails/api/formattering_av_svar.md)
    * [Deployment](rails/deployment.md)
-       * [Capistrano](capistrano.md)
+       * [Capistrano](verktyg/capistrano.md)
    * Ruby
        * [Gems](ruby/gems.md)
-* [Ember](ember-cli.md)
+* [Ember](ember.md)
    * [Språkhantering](ember/sprakhantering.md)
    * [Testning](ember/testning.md)
    * [Deployment](ember/deployment.md)
    * [Less](ember/less.md)
    * [CAS](ember/cas.md)
 * [Verktyg](verktyg.md)
-   * [Solr](solr.md)
+   * [Solr](verktyg/solr.md)
    * Selenium
        * [Rspec](selenium/rspec.md)
 * [Arbetssätt](arbetssatt.md)
-   * [Definition of Done](definition_of_done.md)
+   * [Definition of Done](arbetssatt/definition_of_done.md)
 
