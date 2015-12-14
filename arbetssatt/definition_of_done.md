@@ -4,8 +4,6 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
 
 **POLICY - Definition of Done (Förslag enl. 2015-12-11)**
 
-* ### Acceptanstester uppfyllda
-    Acceptanstester kan genomföras genom automatiska tester byggda på acceptanskriterier, eller genom testning av Produktägaren.
 
 * ### Tester för all logik
     Komponenttester samt integrationstester ska finnas för samtlig logik i systemet.
@@ -23,3 +21,6 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
 
 * ### Deploy till testmiljö genomförd
     För att testa kodens deploybarhet, samt möjliggöra extern testning, ska all kod deployas till en testmiljö.
+
+* ### Acceptanstester uppfyllda
+    Acceptanstester kan genomföras genom automatiska tester byggda på acceptanskriterier, eller genom testning av Produktägaren.
