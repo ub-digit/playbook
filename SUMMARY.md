@@ -1,13 +1,6 @@
 # Summary
 
-* [Om](README.md)
-
-
-
-* [Ember-CLI](ember-cli.md)
-   
-
-
+* [Hem](README.md)
 
 * GitHub
     * [Git](git.md)
