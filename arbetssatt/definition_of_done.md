@@ -26,5 +26,5 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
     Acceptanstester kan genomföras genom automatiska tester byggda på acceptanskriterier, eller genom testning av Produktägaren.
 
 ## Praktisk hantering
->För att visa var en Job Story befinner sig enligt **Definition of Done**, skapas en task för Job Storyn med namn _Definition of Done_ som innehåller information om definitionen vid det tillfället. 
-<br/>Först när **Definition of Done** är uppfylld enligt definitionen flyttas tasken till **Done**.
+1. Skapa en **task** för Storyn som heter **Definition of Done**, innehållande den för tillfället rådande definitionen.
+2. Först när **Definition of Done** är uppfylld enligt definitionen flyttas tasken till **Done**.
