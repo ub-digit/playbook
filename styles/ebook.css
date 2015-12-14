@@ -22,5 +22,5 @@ blockquote {
 }
 
 blockquote ol,blockkquote ul {
-    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
