@@ -25,7 +25,7 @@
    * [Rspec](selenium/rspec.md)
 * [Solr](solr.md)
 * GitHub
-* [Git](git.md)
+    * [Git](git.md)
 * Rails
 * Ember
 * Verktyg
