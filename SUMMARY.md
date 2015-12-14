@@ -7,9 +7,8 @@
 * [Ember-CLI](ember-cli.md)
    
 * [Definition of Done](definition_of_done.md)
-* Selenium
-   * [Rspec](selenium/rspec.md)
-* [Solr](solr.md)
+
+
 * GitHub
     * [Git](git.md)
 * [Rails](rails.md)
@@ -23,7 +22,7 @@
        * [Formattering av svar](rails/api/formattering_av_svar.md)
    * [Deployment](rails/deployment.md)
    * Ruby
-    * [Gems](ruby/gems.md)
+      * [Gems](ruby/gems.md)
 * Ember
    * [Språkhantering](ember/sprakhantering.md)
    * [Testning](ember/testning.md)
@@ -31,5 +30,8 @@
    * [Less](ember/less.md)
    * [CAS](ember/cas.md)
 * Verktyg
+   * [Solr](solr.md)
+   * Selenium
+      * [Rspec](selenium/rspec.md)
 * Arbetssätt
 
