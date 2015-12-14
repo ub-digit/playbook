@@ -4,14 +4,14 @@
 }
 
 .gub-policy + blockquote {
-    color: green !important;
+    color: black !important;
     border:3px dashed red;
 }
 
 .gub-policy + ol {
-    color: green !important;
+    color: black !important;
 }
 
 .gub-policy + ul {
-    color: green !important;
+    color: black !important;
 }
