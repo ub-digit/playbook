@@ -1,2 +1,2 @@
-# Ember-CLI
+# Ember
 
