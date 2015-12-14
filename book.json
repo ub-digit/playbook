@@ -1,9 +1,9 @@
 {
     "styles": {
-        "website": "styles/website.css",
+        "website": "styles/ebook.css",
         "ebook": "styles/ebook.css",
-        "pdf": "styles/pdf.css",
-        "mobi": "styles/mobi.css",
-        "epub": "styles/epub.css"
+        "pdf": "styles/ebook.css",
+        "mobi": "styles/ebook.css",
+        "epub": "styles/ebook.css"
     }
 }
