@@ -26,6 +26,6 @@
    * [Solr](solr.md)
    * Selenium
        * [Rspec](selenium/rspec.md)
-* Arbetssätt
+* [Arbetssätt](arbetssatt.md)
    * [Definition of Done](definition_of_done.md)
 
