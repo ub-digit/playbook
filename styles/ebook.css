@@ -12,4 +12,5 @@ blockquote:before{
     color: #555;
     font-weight:bold;
     border-bottom: 1px solid black;
+    display:block;
 }
