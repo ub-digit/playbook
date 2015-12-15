@@ -7,3 +7,6 @@ blockquote {
 blockquote ol,blockkquote ul {
     margin-bottom: 0 !important;
 }
+blockquote:before{
+    content: "Policy";
+}
