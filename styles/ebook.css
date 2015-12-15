@@ -13,4 +13,5 @@ blockquote:before{
     font-weight:bold;
     border-bottom: 1px solid black;
     display:block;
+    margin-bottom:5px;
 }
