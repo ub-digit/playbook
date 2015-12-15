@@ -9,7 +9,7 @@ blockquote ol,blockkquote ul {
 }
 blockquote:before{
     content: "POLICY";
-    color: #DDD;
+    color: #EEE;
     font-weight:bold;
     border-bottom: 1px solid black;
 }
