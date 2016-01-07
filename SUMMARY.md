@@ -29,5 +29,4 @@
 * [Arbetssätt](arbetssatt.md)
    * [Definition of Done](arbetssatt/definition_of_done.md)
 * Drupal 7
-   * test
 
