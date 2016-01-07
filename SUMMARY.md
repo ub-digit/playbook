@@ -29,5 +29,5 @@
 * [Arbetssätt](arbetssatt.md)
    * [Definition of Done](arbetssatt/definition_of_done.md)
 * Drupal 7
-   * [Drupal 7](drupal_7.md)
+   * [Introduktion](drupal_7.md)
 
