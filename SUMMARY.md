@@ -1,7 +1,6 @@
 # Summary
 
 * [Hem](README.md)
-   * Drupal 7
 * [GitHub](github.md)
    * [Git](git.md)
 * [Rails](rails.md)
