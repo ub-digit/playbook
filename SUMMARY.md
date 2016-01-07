@@ -25,6 +25,7 @@
 * Drupal 7
    * [Introduktion](drupal_7.md)
    * [Länkar](lankar.md)
+   * Installation
 * [Ember](ember.md)
    * [Språkhantering](ember/sprakhantering.md)
    * [Testning](ember/testning.md)
