@@ -1,7 +1,7 @@
 # Summary
 
 * [Hem](README.md)
-   * Bootstrap 3
+   * [Bootstrap 3](bootstrap_3.md)
 * [GitHub](github.md)
    * [Git](git.md)
 * [Rails](rails.md)
