@@ -30,5 +30,4 @@
    * [Deployment](ember/deployment.md)
    * [Less](ember/less.md)
    * [CAS](ember/cas.md)
-* [Frontend](frontend.md)
 
