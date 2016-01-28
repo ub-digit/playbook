@@ -63,37 +63,33 @@ Nedan följer ett antal standardinställningar som kan användas i **deploy.rb**
 Förslagsvis läggs alla inställningar som är generella för applikationen i **config/deploy.rb**
 
 ```
+# config valid only for current version of Capistrano
+lock '3.4.0'
+
 # Set the application name
-set :application, 'dFlow'
+set :application, 'dliver-server'
 
 # Set the repository link
-set :repo_url, 'git@github.com:ub-digit/dFlow.git'
+set :repo_url, 'https://github.com/ub-digit/dliver-server.git'
 
 # Set tmp directory on remote host - Default value: '/tmp , which often will not allow files to be executed
-set :tmp_dir, '/home/rails/tmp'
+set :tmp_dir, '/home/apps/tmp'
 
 # Copy originals into /{app}/shared/config from respective sample file
 set :linked_files, %w{config/database.yml config/config_secret.yml config/passwd}
 
-server 'stagingserver.com', user: 'user', roles: %w{app db web}
+set :rvm_ruby_version, '2.1.5'      # Defaults to: 'default'
 
-set :deploy_to, '/remote/path/to/app'
-
-set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
-
-# Forces user to assign a valid tag for deploy
-def get_tag
-  all_tags = `git tag`.split("\n")
-
-  ask :answer, "Tag to deploy (make sure to push the tag first): #{all_tags} "
-  tag = fetch(:answer)
-  if !all_tags.include? tag
-    abort "Tag #{tag} is not a valid value"
-  end
-  tag
+# Returns config for current stage assigned in config/deploy.yml
+def deploy_config
+  @config ||= YAML.load_file("config/deploy.yml")
+  stage = fetch(:stage)
+  return @config[stage.to_s]
 end
 
-set :branch, get_tag # Sets branch according to given tag
+server deploy_config['host'], user: deploy_config['user'], roles: deploy_config['roles']
+
+set :deploy_to, deploy_config['path']
 ```
 
 ### Skapa environment för deploy
