@@ -31,7 +31,6 @@
    * [Språkhantering](ember/sprakhantering.md)
    * [Testning](ember/testning.md)
    * [Deployment](ember/deployment.md)
-   * [Ember](rails/ember.md)
    * [Less](ember/less.md)
    * [CAS](ember/cas.md)
 
