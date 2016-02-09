@@ -18,11 +18,11 @@ https://github.com/capistrano/rails/
 Lägg till följande i Gemfile:
 ```
 group :development do
-  gem 'capistrano',  '~> 3.4.0'
-  gem 'capistrano-rails', '~> 1.1'
-  gem 'capistrano-passenger' #For passenger specific projects
-  gem 'capistrano-bundler', '~> 1.1.2' #To be able to run bundle install on deploy
-  gem 'capistrano-rvm' # För att hantera ruby version vid deploy
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
 end
 ```
 
@@ -55,29 +55,20 @@ I **Capfile** definieras beroenden som ska inkluderas i Capistrano. I vårat exe
 
 Filerna i **deploy** mappen (production.rb et c.) representerar var sin environment, och bör ha en motsvarande fil i **environments**.
 
-**deploy.rb** innehåller standardinställningar för kommandot **cap deploy**, men den kan även lämnas tom och skrivas över från de environment-specifika filerna i mapppen **deploy**.
+**deploy.rb** innehåller standardinställningar för kommandot **cap deploy**, men den kan även lämnas tom och skrivas över från de environment-specifika filerna i mappen **deploy**.
 
 ### Deploy inställningar
-Nedan följer ett antal standardinställningar som kan användas i **deploy.rb** eller i **deploy/**
-
-Förslagsvis läggs alla inställningar som är generella för applikationen i **config/deploy.rb**
+Nedan följer ett standardutförande av filen **config/deploy.rb**
 
 ```
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-# Set the application name
-set :application, 'dliver-server'
+set :application, 'dFlow'
+set :repo_url, 'https://github.com/ub-digit/dFlow.git'
 
-# Set the repository link
-set :repo_url, 'https://github.com/ub-digit/dliver-server.git'
-
-# Set tmp directory on remote host - Default value: '/tmp , which often will not allow files to be executed
-set :tmp_dir, '/home/apps/tmp'
-
-# Copy originals into /{app}/shared/config from respective sample file
-set :linked_files, %w{config/database.yml config/config_secret.yml config/passwd}
-
+# Copied into /{app}/shared/config from respective sample file
+set :linked_files, %w{config/database.yml config/config_full.yml config/passwd}
 set :rvm_ruby_version, '2.1.5'      # Defaults to: 'default'
 
 # Returns config for current stage assigned in config/deploy.yml
@@ -92,9 +83,39 @@ server deploy_config['host'], user: deploy_config['user'], roles: deploy_config[
 set :deploy_to, deploy_config['path']
 ```
 
-### Skapa environment för deploy
->**OBS: Kom ihåg att alla filer som innehåller känslig information (servernamn / användarnamn ex.) inte ska checkas in i repositoriet. Skapa isf sample-filer (config/deploy/production.rb.sample) som checkas in utan denna information.**
+Ändra inställningarna enligt den aktuella appens behov. Ovanstående fil laddar in serverkonfiguration från **config/deploy.yml** , som kan se ut enligt följande:
 
+```
+production:
+  host: host1.example.come
+  user: username
+  roles:
+    - app
+    - db
+    - web
+  path: '/path/on/server'
+
+staging:
+  host: host2.example.com
+  user: username
+  roles:
+    - app
+    - db
+    - web
+  path: '/path/on/server'
+
+lab:
+  host: host3.example.com 
+  user: username
+  roles:
+    - app
+    - db
+    - web
+  path: '/path/on/server/
+
+```
+
+### Skapa environment för deploy
 I exemplet nedan skapar vi en environment för en testserver, som vi döper till **lab**. Detta då **test** används inom rails för att köra testsviten.
 
 #### Uppdatera production.rb
@@ -117,11 +138,11 @@ Kopiera **production** elementet i **config/database.yml** och döp om det kopie
 #### Skapa Capistrano environment
 Nästa steg är att skapa en Capistrano environment som överensstämmer med den Rails-environment vi just har skapat.
 
-Kopiera därmed **config/deploy/production.rb** som **config/deploy/lab.rb**
+Skapa **config/environments/lab.rb** med **tomt** innehåll.
 
-`cp config/deploy/{production, lab}.rb`
+`touch config/environments/lab.rb`
 
-Uppdatera konfig filen med gällande servernamn, användarnamn och deploy sökväg för lab-environment.
+_Filerna i config/deploy/ måste existera för att deploy-miljöer ska definieras. Däremot behöver de ej ha något innehåll då vi redan definierat miljö-specifik konfiguration i config/deploy.yml_
 
 #### Lägg till SSH nycklar till servrarna
 Lägg till SSH nycklar för att slippa logga in under deploy.
