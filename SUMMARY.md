@@ -15,7 +15,6 @@
        * [Formattering av svar](rails/api/formattering_av_svar.md)
    * [Deployment](rails/deployment.md)
        * [Capistrano](verktyg/capistrano.md)
-   * [Ember](rails/ember.md)
    * Ruby
        * [Gems](ruby/gems.md)
 * [Verktyg](verktyg.md)
@@ -32,6 +31,7 @@
    * [Språkhantering](ember/sprakhantering.md)
    * [Testning](ember/testning.md)
    * [Deployment](ember/deployment.md)
+   * [Ember](rails/ember.md)
    * [Less](ember/less.md)
    * [CAS](ember/cas.md)
 
