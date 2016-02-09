@@ -15,6 +15,7 @@
        * [Formattering av svar](rails/api/formattering_av_svar.md)
    * [Deployment](rails/deployment.md)
        * [Capistrano](verktyg/capistrano.md)
+       * Ember
    * Ruby
        * [Gems](ruby/gems.md)
 * [Verktyg](verktyg.md)
