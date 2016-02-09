@@ -19,7 +19,7 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
 ### 100% Code Coverage (Rails) (oplanerad)
   Samtliga kodrader ska köras under en testsvit för Rails applikationer.
 
-### Deploy till testmiljö genomförd (oplanerad)
+### Deploy till testmiljö genomförd (planerad och införd i JIRA)
   För att testa kodens deploybarhet, samt möjliggöra extern testning, ska all kod deployas till en testmiljö.
 
 ### Acceptanstester uppfyllda (oplanerad)
