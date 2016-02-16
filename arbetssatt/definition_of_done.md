@@ -22,8 +22,13 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
 ### Deploy till testmiljö genomförd (planerad och införd i JIRA)
   För att testa kodens deploybarhet, samt möjliggöra extern testning, ska all kod deployas till en testmiljö.
 
-### Acceptanstester uppfyllda (oplanerad)
-  Acceptanstester kan genomföras genom automatiska tester byggda på acceptanskriterier, eller genom testning av Produktägaren.
+### Acceptanstester uppfyllda (planerad och införd i JIRA)
+  Produktägaren ska **Acceptanstesta** storyn innan den anses vara **Done**.
+  > 1. Utvecklaren flyttar DoD tasken till **Acceptance Test** kolumnen.
+  > 2. PO (eller någon som delegerats av PO) testar funktionaliteten gentemot storyns innehåll.
+  > 3. PO flyttar DoD till 
+  4. **Done** ifall storyn är uppfylld, **eller**
+  5. **In Progress** med kommentarer ifall storyn inte är klar.
 
 ## Praktisk hantering
 >1. Skapa en **task** för Storyn som heter **Definition of Done**, innehållande den för tillfället rådande definitionen.
