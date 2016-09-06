@@ -13,7 +13,7 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
   * APIer ska vara dokumenterade
   * Vid behov ska manualer / applikationsinstruktioner hållas uppdaterade
 
-### Peer review genomförd(oplanerad)
+### Peer review genomförd (oplanerad)
   All kod ska återkopplas från annan utvecklare innan merge sker till master-branch. Detta kan genomföras via **Pull request** eller **Pair programming**.
 
 ### 100% Code Coverage (Rails) (oplanerad)
@@ -28,7 +28,7 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
   > 2. PO (eller någon som delegerats av PO) testar funktionaliteten gentemot storyns innehåll.
   > 3. PO flyttar DoD till 
   4. **Done** ifall storyn är uppfylld, **eller**
-  5. **In Progress** med kommentarer ifall storyn inte är klar.
+  5. **In Progress** med kommentarer ifall storyn inte är klar. Felaktigheter noteras i en UAT-Bug som läggs i **Todo**
 
 ## Praktisk hantering
 >1. Skapa en **task** för Storyn som heter **Definition of Done**, innehållande den för tillfället rådande definitionen.
