@@ -33,5 +33,5 @@
    * [Deployment](ember/deployment.md)
    * [Less](ember/less.md)
    * [CAS](ember/cas.md)
-* GUP
+* [GUP](gup.md)
 
