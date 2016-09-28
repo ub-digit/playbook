@@ -34,4 +34,5 @@
    * [Less](ember/less.md)
    * [CAS](ember/cas.md)
 * [GUP](gup.md)
+   * Installation
 
