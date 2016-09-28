@@ -23,7 +23,7 @@ sin solr-instans på en separat server.
 
 
 ### Ändringar i solrconfig.xml:
-Lägga till filer (postgres*.jar och dataimporthandler*.jar) i classpath:
+Lägga till filer (postgres\*.jar och dataimporthandler\*.jar) i classpath:
 ```xml
   <lib dir="${solr.install.dir:../../../..}/dist/" regex="postgresql.*\.jar" />
   <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-dataimporthandler-.*\.jar" />
