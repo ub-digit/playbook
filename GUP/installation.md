@@ -4,7 +4,7 @@
 En solr instans per miljö så att om __staging__ ligger på servern
 __app-staging-1.ub.gu.se__, så ska det finnas en solr instans för __staging__
 på samma server. När det gäller __production__-miljön så är den tänkt att ha
-sin solr-instans på en separat server.
+sin solr-instans på en separat server. 
 
 - Lägg till användarens ssh-nyckel i installer-användarens och app-användarens authorized_keys filer.
 - Vi använder version 5.3.1 eftersom 6.X inte fungerar p.g.a ett nytt sätt att konfigurera managed schema.
