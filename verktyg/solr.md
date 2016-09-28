@@ -1,7 +1,7 @@
 # Solr lokalt på utvecklardator
 
 ## Installation
-1. Installera Java (v7 eller senare)
+1. Installera Java (v8 eller senare)
 2. Hämta solr-5.3.1.tgz (eller motsvarande aktuell version) (http://apache.mirrors.spacedump.net/lucene/solr/5.3.1/)
 3. Packa upp någonstans där du tycker du vill ha din installation
 
