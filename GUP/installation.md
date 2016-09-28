@@ -24,21 +24,24 @@ sin solr-instans på en separat server.
 
 ### Ändringar i solrconfig.xml:
 Lägga till filer (postgres*.jar och dataimporthandler*.jar) i classpath:
+```xml
   <lib dir="${solr.install.dir:../../../..}/dist/" regex="postgresql.*\.jar" />
   <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-dataimporthandler-.*\.jar" />
-
+```
 
 Konfigurering av dataimporthandler:
-  <requestHandler name="/dataimport" class="solr.DataImportHandler">
+```xml
+<requestHandler name="/dataimport" class="solr.DataImportHandler">
     <lst name="defaults">
       <str name="config">dataimportconfig.xml</str>
     </lst>
   </requestHandler>
-
+```
 
 Ändra default sökfäkt till det som är satt i schema.xml
+```xml
 <str name="df">all</str>
-
+```
 
 
 Konfigurera databas i dataimportconfig.xml
@@ -49,4 +52,3 @@ Full indexering sker via DataImportHandler
 
 
 
-##
