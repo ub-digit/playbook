@@ -2,9 +2,11 @@
 
 Hit deployas GUP:
 
-| Server | Frontend | Backend |  |
-| --- | --- | --- | --- |
-|  |  |  |  |
+| Server | Frontend | Backend |
+| --- | --- | --- |
+| app-lab-1.ub.gu.se | gup-lab.ub.gu.se | gup-server-lab.ub.gu.se |
+| app-staging-1.ub.gu.se | gup-staging.ub.gu.se | gup-server-staging.ub.gu.se |
+| app-production-1.ub.gu.se | gup.ub.gu.se | gup-server.ub.gu.se |
 
 ### p-lab-1.ub.gu.se
 
@@ -12,17 +14,20 @@ Hit deployas GUP:
 
 * gup-server-lab.ub.gu.se
 
+
 ### app-staging-1.ub.gu.se
 
 * gup-staging.ub.gu.se
 
 * gup-server-staging.ub.gu.se
 
+
 ### app-production-1.ub.gu.se
 
 * gup.ub.gu.se
 
 * gup-server.ub.gu.se
+
 
 ## Förberedelser
 
