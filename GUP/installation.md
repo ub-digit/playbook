@@ -25,12 +25,14 @@ sin solr-instans på en separat fysisk server.
 
 ## deploy av backend
 
-Backend ligger
+Backend ligger i https:\/\/github.com\/ub-digit\/gup-server.git
 
 * cap staging deploy:check
 * cap staging deploy
 
 ## deploy av frontend
+
+Frontend ligger i https:\/\/github.com\/ub-digit\/gup.git
 
 * se till att ha node+npm, bower, ember-cli körbart.
 * kör ubdeploy.sh i config-reposets tool katalog: ubdeploy.sh staging clear
