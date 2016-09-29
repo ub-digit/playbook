@@ -11,17 +11,27 @@ Principen är att ha en solr-instans per miljö så att om **staging** ligger p�
 på samma server. När det gäller **production**-miljön hanterar vi den speciellt och den är tänkt att ha
 sin solr-instans på en separat fysisk server.
 
-* 
 * Vi använder version 5.3.1 eftersom 6.X inte fungerar p.g.a ett nytt sätt att konfigurera managed schema.
 * Följ instruktioner i [dokument om Solr](../verktyg/solr.md).
-* Drivrutiner för postgres läggs i katalogen **\/opt\/solr\/dist** \(ex postgresql-9.4.1209.jar\)
+* Lägg drivrutiner för postgresql i katalogen **\/opt\/solr\/dist** \(ex postgresql-9.4.1209.jar\)
 * Kopiera **config\/solr\/solrconfig.xml** från gup-server-repot, lägg den i **\/opt\/solr\/server\/solr\/gup-people\/conf\/**
 * Kopiera **config\/solr\/people\/schema.xml** från gup-server-repot, lägg den i **\/opt\/solr\/server\/solr\/gup-people\/conf\/**
 * Kopiera **config\/solr\/gup-server-staging\/opt\/solr\/server\/solr\/gup-people\/conf\/dataimportconfig.xml** från config-repot, till i **\/opt\/solr\/server\/solr\/gup-people\/conf\/** på aktuell app-server.
+
+## postgresql
+
 * Skapa användare i databasen **gup** på app-servern.
 * Se till att användaren har ett lösenord som används i **pg\_hba.conf**.
+
+## deploy av backend
+
+Backend ligger
+
 * cap staging deploy:check
 * cap staging deploy
+
+## deploy av frontend
+
 * se till att ha node+npm, bower, ember-cli körbart.
 * kör ubdeploy.sh i config-reposets tool katalog: ubdeploy.sh staging clear
 * eller ubdeploy.sh staging clear
