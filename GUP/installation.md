@@ -1,5 +1,29 @@
 # GUP Installation
 
+Hit deployas GUP:
+
+| Server | Frontend | Backend |  |
+| --- | --- | --- | --- |
+|  |  |  |  |
+
+### p-lab-1.ub.gu.se
+
+* gup-lab.ub.gu.se
+
+* gup-server-lab.ub.gu.se
+
+### app-staging-1.ub.gu.se
+
+* gup-staging.ub.gu.se
+
+* gup-server-staging.ub.gu.se
+
+### app-production-1.ub.gu.se
+
+* gup.ub.gu.se
+
+* gup-server.ub.gu.se
+
 ## Förberedelser
 
 * Lägg till användarens ssh-nyckel i installer-användarens och app-användarens authorized\_keys filer.
@@ -35,6 +59,7 @@ Backend ligger i https:\/\/github.com\/ub-digit\/gup-server.git
 Frontend ligger i https:\/\/github.com\/ub-digit\/gup.git
 
 * se till att ha node+npm, bower, ember-cli körbart.
+* gå till katalogen där gup är utcheckat
 * kör ubdeploy.sh i config-reposets tool katalog: ubdeploy.sh staging clear
 * eller ubdeploy.sh staging clear
 
