@@ -10,48 +10,46 @@
 
 ## Förberedelser
 
-* Lägg till användarens ssh-nyckel i installer-användarens och app-användarens authorized\_keys filer.
+- Lägg till användarens ssh-nyckel i installer-användarens och app-användarens authorized\_keys filer.
 
-## solr
+## Solr
 
 Principen är att ha en solr-instans per miljö så att om **staging** ligger på servern
 **app-staging-1.ub.gu.se**, så har man också en solr-instans för **staging**
 på samma server. När det gäller **production**-miljön hanterar vi den speciellt och den är tänkt att ha
 sin solr-instans på en separat fysisk server.
 
-* Vi använder version 5.3.1 eftersom 6.X inte fungerar p.g.a ett nytt sätt att konfigurera managed schema.
-* Följ instruktioner i [dokument om Solr](../verktyg/solr.md).
-* Lägg drivrutiner för postgresql i katalogen **\/opt\/solr\/dist** \(ex postgresql-9.4.1209.jar\)
-* Kopiera **config\/solr\/solrconfig.xml** från gup-server-repot, lägg den i **\/opt\/solr\/server\/solr\/gup-people\/conf\/**
-* Kopiera **config\/solr\/people\/schema.xml** från gup-server-repot, lägg den i **\/opt\/solr\/server\/solr\/gup-people\/conf\/**
-* Kopiera **config\/solr\/gup-server-staging\/opt\/solr\/server\/solr\/gup-people\/conf\/dataimportconfig.xml** från config-repot, till i **\/opt\/solr\/server\/solr\/gup-people\/conf\/** på aktuell app-server.
+- Vi använder version 5.3.1 eftersom 6.X inte fungerar p.g.a ett nytt sätt att konfigurera managed schema.
+- Följ instruktioner i [dokument om Solr](../verktyg/solr.md).
+- Lägg drivrutiner för postgresql i katalogen **\/opt\/solr\/dist** \(ex postgresql-9.4.1209.jar\)
+- Kopiera **config\/solr\/solrconfig.xml** från gup-server-repot, lägg den i **\/opt\/solr\/server\/solr\/gup-people\/conf\/**
+- Kopiera **config\/solr\/people\/schema.xml** från gup-server-repot, lägg den i **\/opt\/solr\/server\/solr\/gup-people\/conf\/**
+- Kopiera **config\/solr\/gup-server-staging\/opt\/solr\/server\/solr\/gup-people\/conf\/dataimportconfig.xml** från config-repot, till i **\/opt\/solr\/server\/solr\/gup-people\/conf\/** på aktuell app-server.
 
-## postgresql
+## Postgresql
 
-* Skapa användare i databasen **gup** på app-servern.
-* Se till att användaren har ett lösenord som används i **pg\_hba.conf**.
+- Skapa användare i databasen **gup** på app-servern.
+- Se till att användaren har ett lösenord som används i **pg\_hba.conf**.
 
-## deploy av backend
+## Deploy av backend
 
 Backend ligger i https:\/\/github.com\/ub-digit\/gup-server.git
 
 Se till att aktuella config-fliler används. Dessa hämtas manuellt från config-reposet: https:\/\/github.com\/ub-digit\/config.git
 
-* Vid behov kopiera config-filer från config-reposets katalog **apps\/gup-server\/config-data\/**
-
-* cap staging deploy:check
-
-* cap staging deploy
+- Vid behov kopiera config-filer från config-reposets katalog **apps\/gup-server\/config-data\/**
+- cap staging deploy:check
+- cap staging deploy
 
 
-## deploy av frontend
+## Deploy av frontend
 
 Frontend ligger i https:\/\/github.com\/ub-digit\/gup.git
 
-* se till att ha node+npm, bower, ember-cli körbart.
-* gå till katalogen där gup är utcheckat
-* kör ubdeploy.sh i config-reposets tool katalog: ubdeploy.sh staging clear
-* eller ubdeploy.sh staging clear
+- se till att ha node+npm, bower, ember-cli körbart.
+- gå till katalogen där gup är utcheckat
+- kör ubdeploy.sh i config-reposets tool katalog: ubdeploy.sh staging clear
+- eller ubdeploy.sh staging clear
 
 ### Ändringar i solrconfig.xml:
 
@@ -78,7 +76,5 @@ Konfigurering av dataimporthandler:
 <str name="df">all</str>
 ```
 
-Konfigurera databas i dataimportconfig.xml
-
-Full indexering sker via DataImportHandler
-
+- Konfigurera databas i dataimportconfig.xml
+- Full indexering sker via DataImportHandler
