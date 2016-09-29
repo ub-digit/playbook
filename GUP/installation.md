@@ -1,5 +1,9 @@
 # GUP Installation
 
+## Förberedelser
+
+* Lägg till användarens ssh-nyckel i installer-användarens och app-användarens authorized\_keys filer.
+
 ## solr
 
 Principen är att ha en solr-instans per miljö så att om **staging** ligger på servern
@@ -7,7 +11,7 @@ Principen är att ha en solr-instans per miljö så att om **staging** ligger p�
 på samma server. När det gäller **production**-miljön hanterar vi den speciellt och den är tänkt att ha
 sin solr-instans på en separat fysisk server.
 
-* Lägg till användarens ssh-nyckel i installer-användarens och app-användarens authorized\_keys filer.
+* 
 * Vi använder version 5.3.1 eftersom 6.X inte fungerar p.g.a ett nytt sätt att konfigurera managed schema.
 * Följ instruktioner i [dokument om Solr](../verktyg/solr.md).
 * Drivrutiner för postgres läggs i katalogen **\/opt\/solr\/dist** \(ex postgresql-9.4.1209.jar\)
