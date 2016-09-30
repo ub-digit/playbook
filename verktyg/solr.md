@@ -1,14 +1,15 @@
 # Typisk installation av Solr (lokalt på utvecklardator)
 
 ## Installation
-1. Installera Java (v8 eller senare)
+1. Installera Java (v8 eller senare). Bäst resultat fås via http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html. Här väljer vi http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.tar.gz.
 2. Hämta solr-5.5.3.tgz (eller motsvarande aktuell version) (http://apache.mirrors.spacedump.net/lucene/solr)
 3. Packa upp någonstans där du tycker du vill ha din installation. I detta exempel packar vi upp som root till katalogen /opt.
-4. Följaktligen kommer uppackningen att skapa katalogen /opt/solr-5.5.3.
+4. Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
 5. Den härpå följande konfigurationen kan försiggå på två sätt - mha. schema.xml eller mha. solr's baskonfiguration.  
 
 ## Konfiguration när schema.xml finns
-1. Gå till din installationskatalog
+
+2. 1. Gå till din installationskatalog
 2. Kör ```bin/solr start -a "-Djetty.host=127.0.0.1"```
 3. För att skapa en indexplats (core), kör ```bin/solr create_core -c CORENAME -d basic_configs```
 4. Kopiera in ```schema.xml``` till ```server/solr/CORENAME/conf/schema.xml```
