@@ -37,7 +37,7 @@ Backend ligger i https://github.com/ub-digit/gup-server.git
 
 Se till att aktuella config-fliler används. Dessa hämtas manuellt från config-reposet: https://github.com/ub-digit/config.git
 
-- Vid behov kopiera config-filer från config-reposets katalog **apps\/gup-server\/config-data\/**
+- Vid behov kopiera config-filer från config-reposets katalog **apps/gup-server/config-data/**
 - cap staging deploy:check
 - cap staging deploy
 
