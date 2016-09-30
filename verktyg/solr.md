@@ -4,8 +4,11 @@
 1. Hämta Java (v8 eller senare). Bäst resultat fås via http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html. Välj den senaste (här och nu jdk-8u102-linux-x64.tar.gz).
 2. Hämta solr-5.5.3.tgz (eller motsvarande aktuell version) (http://apache.mirrors.spacedump.net/lucene/solr)
 3. Packa upp någonstans där du tycker du vill ha din installation. I detta exempel packar vi upp som root till katalogen /opt.
-4. Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
-5. Den härpå följande konfigurationen kan försiggå på två sätt - mha. schema.xml eller mha. solr's baskonfiguration.  
+4. I /opt: sudo su; 
+  * tar xzvf jdk-8u102-linux-x64.tar.gz 
+  * tar xzvf solr-5.5.3.tgz
+5. Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
+6. Den härpå följande konfigurationen kan försiggå på två sätt - mha. schema.xml eller mha. solr's baskonfiguration.
 
 ## Konfiguration när schema.xml finns
 Nedanstående konfiguration gäller din lokala utvecklarmaskin. För serverinstallation se konfigurationen för respektive tjänst.
