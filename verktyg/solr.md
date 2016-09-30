@@ -10,7 +10,7 @@
 5. Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
 6. Skapa lämpligtvis länkarna /opt/java8 -> /opt/jdk1.8.0_102 och /opt/solr -> /opt/solr-5.5.3.
 
-Den härpå följande konfigurationen kan försiggå på två sätt - mha. **schema.xml** eller mha. solr's baskonfiguration.
+Den härpå följande konfigurationen kan försiggå på två sätt - mha. **schema.xml** eller mha. solr's **baskonfiguration**.
 
 ## Konfiguration m.h.a. schema.xml
 Nedanstående konfiguration gäller din lokala utvecklarmaskin. För serverinstallation se konfigurationen för respektive tjänst.
