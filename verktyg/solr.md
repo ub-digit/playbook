@@ -1,4 +1,4 @@
-# Typisk installation av Solr (lokalt på utvecklardator)
+# Installation och konfiguration av Solr (lokalt på utvecklardator)
 
 ## Installation
 1. Hämta Java (v8 eller senare). Bäst resultat fås via http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html. Välj den senaste (här och nu jdk-8u102-linux-x64.tar.gz).
@@ -8,15 +8,18 @@
   * tar xzvf jdk-8u102-linux-x64.tar.gz 
   * tar xzvf solr-5.5.3.tgz
 5. Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
-6. Skapa lämpligtvis länkarna /opt/java8 -> /opt/jdk1.8.0_102 och /opt/solr -> /opt/solr-5.5.3.
+6. Skapa länkarna 
+  * /opt/java8 -> /opt/jdk1.8.0_102 
+  * /opt/solr -> /opt/solr-5.5.3.
 
 Den härpå följande konfigurationen kan försiggå på två sätt - mha. **schema.xml** eller mha. solr's **baskonfiguration**.
 
 ## Konfiguration m.h.a. schema.xml
 Nedanstående konfiguration gäller din lokala utvecklarmaskin. För serverinstallation se konfigurationen för respektive tjänst.
 
-1. Gå till /opt/solr-5.5.3
-2. Kör ```bin/solr start -a "-Djetty.host=127.0.0.1"```
+1. Gå till /opt/solr
+2. sudo su
+2. Kör solr: ```bin/solr start -a "-Djetty.host=127.0.0.1"```
 3. För att skapa en indexplats (core), kör ```bin/solr create_core -c CORENAME -d basic_configs```
 4. Kopiera in ```schema.xml``` till ```server/solr/CORENAME/conf/schema.xml```
 5. Gå till http://localhost:8983/ eller motsvarande port som rapporteras av start-kommandot ovan.
@@ -85,7 +88,7 @@ de utpekde IP-numren att ansluta till solr-serverns webbgränssnitt och ställa 
 
 Vill man bara testa med Solr kan man sätta upp en dynamisk konfiguration. Vanligen kommer vi inte göra detta, men såhär gör man.
 
-1. Gå till din installationskatalog
+1. Gå till /opt/solr
 2. Kör ```bin/solr start -a "-Djetty.host=127.0.0.1"```
 3. För att skapa en indexplats (core), kör ```bin/solr create_core -c CORENAME```
 4. Gå till http://localhost:8983/ eller motsvarande port som rapporteras av start-kommandot ovan.
