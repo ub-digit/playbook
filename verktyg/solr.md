@@ -1,4 +1,4 @@
-# Solr lokalt på utvecklardator
+# Typisk installation av Solr lokalt på utvecklardator
 
 ## Installation
 1. Installera Java (v8 eller senare)
