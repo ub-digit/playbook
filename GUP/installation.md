@@ -33,7 +33,7 @@ sin solr-instans på en separat fysisk server.
 
 ## Deploy av backend
 
-Backend ligger i https:\/\/github.com\/ub-digit\/gup-server.git
+Backend ligger i https://github.com/ub-digit/gup-server.git
 
 Se till att aktuella config-fliler används. Dessa hämtas manuellt från config-reposet: https:\/\/github.com\/ub-digit\/config.git
 
