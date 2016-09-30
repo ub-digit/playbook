@@ -10,7 +10,7 @@
 
 ## Förberedelser
 
-- Lägg till användarens ssh-nyckel i installer-användarens och app-användarens authorized\_keys filer på respektive server..
+- Lägg till användarens ssh-nyckel i installer-användarens och app-användarens authorized\_keys filer på respektive server.
 
 ## Solr
 
