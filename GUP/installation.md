@@ -25,7 +25,7 @@ sin solr-instans på en separat fysisk server.
 - Lägg drivrutiner för postgresql i katalogen **/opt/solr/dist** \(ex postgresql-9.4.1209.jar\)
 - Kopiera **config/solr/solrconfig.xml** från gup-server-repot, lägg den i **/opt/solr/server/solr/gup-people/conf/**.
 - Kopiera **config/solr/people/schema.xml** från gup-server-repot, lägg den i **/opt/solr/server/solr/gup-people/conf/**
-- Kopiera **config\/solr\/gup-server-staging/opt/solr/server/solr/gup-people/conf/dataimportconfig.xml** från config-repot, till i **/opt/solr/server/solr/gup-people/conf/** på aktuell app-server.
+- Kopiera **config/solr/gup-server-staging/opt/solr/server/solr/gup-people/conf/dataimportconfig.xml** från config-repot, till i **/opt/solr/server/solr/gup-people/conf/** på aktuell app-server.
 
 ## Postgresql
 
