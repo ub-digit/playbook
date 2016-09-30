@@ -9,8 +9,8 @@
   * tar xzvf solr-5.5.3.tgz
 5. Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
 6. Skapa länkarna 
-  * /opt/java8 -> /opt/jdk1.8.0_102 
-  * /opt/solr -> /opt/solr-5.5.3.
+  * ```ln -s /opt/jdk1.8.0_102 /opt/java8```
+  * ```ln -s /opt/solr-5.5.3 /opt/solr```
 
 Den härpå följande konfigurationen kan försiggå på två sätt - mha. **schema.xml** eller mha. solr's **baskonfiguration**.
 
@@ -18,7 +18,7 @@ Den härpå följande konfigurationen kan försiggå på två sätt - mha. **sch
 Nedanstående konfiguration gäller din lokala utvecklarmaskin. För serverinstallation se konfigurationen för respektive tjänst.
 
 1. Gå till /opt/solr
-2. sudo su
+2. ```sudo su```
 3. Kör solr: ```bin/solr start -a "-Djetty.host=127.0.0.1"```
 4. För att skapa en indexplats (core), kör ```bin/solr create_core -c CORENAME -d basic_configs```
 5. Kopiera in ```schema.xml``` till ```server/solr/CORENAME/conf/schema.xml```
