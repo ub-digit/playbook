@@ -8,7 +8,8 @@
   * tar xzvf jdk-8u102-linux-x64.tar.gz 
   * tar xzvf solr-5.5.3.tgz
 5. Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
-6. Den härpå följande konfigurationen kan försiggå på två sätt - mha. schema.xml eller mha. solr's baskonfiguration.
+6. Skapa lämpligtvis länkarna /opt/java8 -> /opt/jdk1.8.0_102 och /opt/solr -> /opt/solr-5.5.3.
+7. Den härpå följande konfigurationen kan försiggå på två sätt - mha. schema.xml eller mha. solr's baskonfiguration.
 
 ## Konfiguration när schema.xml finns
 Nedanstående konfiguration gäller din lokala utvecklarmaskin. För serverinstallation se konfigurationen för respektive tjänst.
