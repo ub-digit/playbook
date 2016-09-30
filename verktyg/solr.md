@@ -10,7 +10,7 @@
 ## Konfiguration när schema.xml finns
 Nedanstående konfiguration gäller din lokala utvecklarmaskin. För serverinstallation se konfigurationen för respektive tjänst.
 
-2. 1. Gå till din installationskatalog
+1. Gå till din installationskatalog
 2. Kör ```bin/solr start -a "-Djetty.host=127.0.0.1"```
 3. För att skapa en indexplats (core), kör ```bin/solr create_core -c CORENAME -d basic_configs```
 4. Kopiera in ```schema.xml``` till ```server/solr/CORENAME/conf/schema.xml```
