@@ -2,8 +2,9 @@
 
 ## Installation
 1. Installera Java (v8 eller senare)
-2. Hämta solr-5.3.1.tgz (eller motsvarande aktuell version) (http://apache.mirrors.spacedump.net/lucene/solr/5.3.1/)
-3. Packa upp någonstans där du tycker du vill ha din installation. I detta exempel använder vi /opt.
+2. Hämta solr-5.5.3.tgz (eller motsvarande aktuell version) (http://apache.mirrors.spacedump.net/lucene/solr)
+3. Packa upp någonstans där du tycker du vill ha din installation. I detta exempel packar vi upp som root till katalogen /opt.
+4. Följaktligen kommer uppackningen att skapa katalogen /opt/solr-5.5.3.
 
 ## Konfiguration när schema.xml finns
 1. Gå till din installationskatalog
