@@ -8,6 +8,7 @@
 5. Den härpå följande konfigurationen kan försiggå på två sätt - mha. schema.xml eller mha. solr's baskonfiguration.  
 
 ## Konfiguration när schema.xml finns
+Nedanstående konfiguration gäller din lokala utvecklarmaskin. För serverinstallation se konfigurationen för respektive tjänst.
 
 2. 1. Gå till din installationskatalog
 2. Kör ```bin/solr start -a "-Djetty.host=127.0.0.1"```
