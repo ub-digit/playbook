@@ -35,7 +35,7 @@ sin solr-instans på en separat fysisk server.
 
 Backend ligger i https://github.com/ub-digit/gup-server.git
 
-Se till att aktuella config-fliler används. Dessa hämtas manuellt från config-reposet: https:\/\/github.com\/ub-digit\/config.git
+Se till att aktuella config-fliler används. Dessa hämtas manuellt från config-reposet: https://github.com/ub-digit/config.git
 
 - Vid behov kopiera config-filer från config-reposets katalog **apps\/gup-server\/config-data\/**
 - cap staging deploy:check
@@ -44,7 +44,7 @@ Se till att aktuella config-fliler används. Dessa hämtas manuellt från config
 
 ## Deploy av frontend
 
-Frontend ligger i https:\/\/github.com\/ub-digit\/gup.git
+Frontend ligger i https://github.com/ub-digit/gup.git
 
 - se till att ha node+npm, bower, ember-cli körbart.
 - gå till katalogen där gup är utcheckat
