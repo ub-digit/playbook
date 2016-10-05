@@ -19,9 +19,11 @@ Principen är att ha en solr-instans per miljö så att om **staging** ligger p�
 på samma server. När det gäller **production**-miljön hanterar vi den speciellt och den är tänkt att ha
 sin solr-instans på en separat fysisk server.
 
-- Vi använder version 5.3.1 eftersom 6.X inte fungerar p.g.a ett nytt sätt att konfigurera managed schema.
+Vi använder version 5.3.1 eftersom 6.X inte fungerar p.g.a ett nytt sätt att konfigurera managed schema.
+
+Som superuser på ifrågavarande app-server:
+
 - Följ instruktioner i [dokument om Solr](../verktyg/solr.md).
-- Som superuser på ifrågavarande app-server:
 - Hämta senaste JDBC-driver (t.ex. **postgresql-9.4.1211.jar**) från **https://jdbc.postgresql.org/download.html**
 - Lägg JDBC-drivern i  **/opt/solr/dist** 
 - All solr-konfiguration för gup-server ligger i config-reposet, närmare bestämt i **config/apps/gup-server/solr-config/default/opt/solr/server/solr**, nedan kallat {CONFIG}
