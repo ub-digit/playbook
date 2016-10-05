@@ -29,9 +29,9 @@ Som superuser på ifrågavarande app-server:
 - All solr-konfiguration för gup-server ligger i config-reposet, närmare bestämt i **config/apps/gup-server/solr-config/default/opt/solr/server/solr**, nedan kallat {CONFIG}
 | From  | To  | 
 | ---   | --- |
-| **{CONFIG}/solrconfig.xml**                  |**/opt/solr/server/solr/gup-people/conf/**|
-| **{CONFIG}/gup-people/schema.xml**           |**/opt/solr/server/solr/gup-people/conf/**|
-| **{CONFIG}/gup-people/dataimportconfig.xml** |**/opt/solr/server/solr/gup-people/conf/**|
+| **{CONFIG}/solrconfig.xml**                  | **/opt/solr/server/solr/gup-people/conf/** |
+| **{CONFIG}/gup-people/schema.xml**           | **/opt/solr/server/solr/gup-people/conf/** |
+| **{CONFIG}/gup-people/dataimportconfig.xml** | **/opt/solr/server/solr/gup-people/conf/** |
 
 ## Postgresql
 
