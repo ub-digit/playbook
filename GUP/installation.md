@@ -27,9 +27,10 @@ Som superuser på ifrågavarande app-server:
 - Hämta senaste JDBC-driver (t.ex. **postgresql-9.4.1211.jar**) från **https://jdbc.postgresql.org/download.html**
 - Lägg JDBC-drivern i  **/opt/solr/dist** 
 - All solr-konfiguration för gup-server ligger i config-reposet, närmare bestämt i **config/apps/gup-server/solr-config/default/opt/solr/server/solr**, nedan kallat {CONFIG}
-- Kopiera **{CONFIG}/solrconfig.xml** till **/opt/solr/server/solr/gup-people/conf/**.
-- Kopiera **{CONFIG}/gup-people/schema.xml** till **/opt/solr/server/solr/gup-people/conf/**
-- Kopiera **{CONFIG}/gup-people/dataimportconfig.xml** till **/opt/solr/server/solr/gup-people/conf/**.
+| From                                         | To                                       |
+| **{CONFIG}/solrconfig.xml**                  |**/opt/solr/server/solr/gup-people/conf/**|
+| **{CONFIG}/gup-people/schema.xml**           |**/opt/solr/server/solr/gup-people/conf/**|
+| **{CONFIG}/gup-people/dataimportconfig.xml** |**/opt/solr/server/solr/gup-people/conf/**|
 
 ## Postgresql
 
