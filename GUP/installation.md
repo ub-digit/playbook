@@ -26,10 +26,9 @@ Som superuser på ifrågavarande app-server:
 - Följ instruktioner i [dokument om Solr](../verktyg/solr.md).
 - Hämta senaste JDBC-driver (t.ex. **postgresql-9.4.1211.jar**) från **https://jdbc.postgresql.org/download.html**
 - Lägg JDBC-drivern i  **/opt/solr/dist** 
-- All solr-konfiguration för gup-server ligger i config-reposet, närmare bestämt i **config/apps/gup-server/solr-config/default/opt/solr/server/solr**, nedan kallat {CONFIG}
+- Kopiera inställningsfiler enligt nedanstående tabell. Med CONFIG nedan avses config-reposet, närmare bestämt **config/apps/gup-server/solr-config/default/opt/solr/server/solr**
 
-
-| Kopiera från  | Till  | 
+| från  | till  | 
 | ---   | --- |
 | **{CONFIG}/solrconfig.xml**                  | **/opt/solr/server/solr/gup-people/conf/** |
 | **{CONFIG}/gup-people/schema.xml**           | **/opt/solr/server/solr/gup-people/conf/** |
