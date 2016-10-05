@@ -1,5 +1,6 @@
 # Installation och konfiguration av Solr (lokalt på utvecklardator)
 
+Exemplets utgångspunkt: man vill rigga solr för utveckling av gup-server.
 ## Installation
 1. Hämta Java (v8 eller senare). Bäst resultat fås via http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html. Välj den senaste (här och nu jdk-8u102-linux-x64.tar.gz).
 2. Hämta solr-5.5.3.tgz (eller motsvarande aktuell version) (http://apache.mirrors.spacedump.net/lucene/solr)
@@ -8,9 +9,12 @@
   * tar xzvf jdk-8u102-linux-x64.tar.gz 
   * tar xzvf solr-5.5.3.tgz
 5. Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
-6. Skapa länkarna 
+6. Skapa länkarna
   * ```ln -s /opt/jdk1.8.0_102 /opt/java8```
-  * ```ln -s /opt/solr-5.5.3 /opt/solr```
+  * ```ln -s /opt/solr-5.5.3 /opt/solr``` 
+7. - Hämta senaste JDBC-driver (t.ex. **postgresql-9.4.1211.jar**) från **https://jdbc.postgresql.org/download.html**
+- Lägg JDBC-drivern i  **/opt/solr/dist** 
+
 
 Den härpå följande konfigurationen kan försiggå på två sätt - mha. **schema.xml** eller mha. solr's **baskonfiguration**.
 
