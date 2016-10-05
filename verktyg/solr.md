@@ -8,12 +8,11 @@ Exemplets utgångspunkt: man vill rigga solr för utveckling av gup-server.
 4. I /opt: sudo su; 
   * tar xzvf jdk-8u102-linux-x64.tar.gz 
   * tar xzvf solr-5.5.3.tgz
-5. Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
-6. Skapa länkarna
+  Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
+5. Skapa länkarna
   * ```ln -s /opt/jdk1.8.0_102 /opt/java8```
-  * ```ln -s /opt/solr-5.5.3 /opt/solr``` 
-7. - Hämta senaste JDBC-driver (t.ex. **postgresql-9.4.1211.jar**) från **https://jdbc.postgresql.org/download.html**
-- Lägg JDBC-drivern i  **/opt/solr/dist** 
+  * ```ln -s /opt/solr-5.5.3 /opt/solr```
+6. - Hämta senaste JDBC-drivern (t.ex. **postgresql-9.4.1211.jar**) från **https://jdbc.postgresql.org/download.html** och kopiera den till **/opt/solr/dist** 
 
 
 Den härpå följande konfigurationen kan försiggå på två sätt - mha. **schema.xml** eller mha. solr's **baskonfiguration**.
