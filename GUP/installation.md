@@ -21,11 +21,13 @@ sin solr-instans på en separat fysisk server.
 
 - Vi använder version 5.3.1 eftersom 6.X inte fungerar p.g.a ett nytt sätt att konfigurera managed schema.
 - Följ instruktioner i [dokument om Solr](../verktyg/solr.md).
-- 
-- Lägg drivrutiner för postgresql i katalogen **/opt/solr/dist** \(ex postgresql-9.4.1209.jar\)
-- Kopiera **config/solr/solrconfig.xml** från gup-server-repot, lägg den i **/opt/solr/server/solr/gup-people/conf/**.
-- Kopiera **config/solr/people/schema.xml** från gup-server-repot, lägg den i **/opt/solr/server/solr/gup-people/conf/**
-- Kopiera **config/solr/gup-server-staging/opt/solr/server/solr/gup-people/conf/dataimportconfig.xml** från config-repot, till i **/opt/solr/server/solr/gup-people/conf/** på aktuell app-server.
+- Som superuser på ifrågavarande app-server:
+- Hämta senaste JDBC-driver (t.ex. **postgresql-9.4.1211.jar**) från **https://jdbc.postgresql.org/download.html**
+- Lägg JDBC-drivern i  **/opt/solr/dist** 
+- All solr-konfiguration för gup-server ligger i config-reposet, närmare bestämt i **config/apps/gup-server/solr-config/default/opt/solr/server/solr**, nedan kallat {CONFIG}
+- Kopiera **{CONFIG}/solrconfig.xml** till **/opt/solr/server/solr/gup-people/conf/**.
+- Kopiera **{CONFIG}/gup-people/schema.xml** till **/opt/solr/server/solr/gup-people/conf/**
+- Kopiera **{CONFIG}/gup-people/dataimportconfig.xml** till **/opt/solr/server/solr/gup-people/conf/**.
 
 ## Postgresql
 
