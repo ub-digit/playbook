@@ -19,7 +19,7 @@ Principen är att ha en solr-instans per miljö så att om **staging** ligger p�
 på samma server. När det gäller **production**-miljön hanterar vi den speciellt och den är tänkt att ha
 sin solr-instans på en separat fysisk server.
 
-Vi använder version 5.3.1 eftersom 6.X inte fungerar p.g.a ett nytt sätt att konfigurera managed schema.
+Vi använder version 5.3.1 eftersom 6.X inte fungerar för oss p.g.a en annorlunda metod för konfiguration av "managed schema".
 
 Som superuser på ifrågavarande app-server:
 
