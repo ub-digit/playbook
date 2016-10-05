@@ -29,7 +29,7 @@ Som superuser på ifrågavarande app-server:
 - All solr-konfiguration för gup-server ligger i config-reposet, närmare bestämt i **config/apps/gup-server/solr-config/default/opt/solr/server/solr**, nedan kallat {CONFIG}
 
 
-| From  | To  | 
+| Fromm  | To  | 
 | ---   | --- |
 | **{CONFIG}/solrconfig.xml**                  | **/opt/solr/server/solr/gup-people/conf/** |
 | **{CONFIG}/gup-people/schema.xml**           | **/opt/solr/server/solr/gup-people/conf/** |
