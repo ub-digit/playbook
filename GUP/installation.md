@@ -13,17 +13,13 @@
 - Lägg till användarens ssh-nyckel i installer-användarens och app-användarens authorized\_keys filer på respektive server.
 
 ## Solr
-Våra tre olika environments (miljöer) hanteras så att:
+I det följande betyder **separat** att applikationen använder en solr-instans på en separat fysisk server (fr.a. av prestandaskäl), och **lokal** att solr-installationen körs på samma maskin som applikationen.
+Vi har ju tre olika environments (miljöer). Dessutom har vi utvecklarnas maskiner som här kallas **dev** och jämställs med miljöerna. Dessa hanteras så att:
 
-| miljö          | solr-instans     |
-| ---            | ---              |
-| **lab**        |   lokal          |
-| **staging**    |   lokal          |
-| **dev**        |   lokal          |
-| **production** |   separat        |
+* **lab**, **staging** och **dev** körs **lokal**t
+* **production** körs **separat**
 
-**separat**: solr-instans på en separat fysisk server, fr.a. av prestandaskäl.
-**lokal**: solr-installationen på samma maskin som applikationen.
+### Lokal installation
 
 Vi använder version 5.3.1 eftersom 6.X inte fungerar för oss p.g.a en annorlunda metod för konfiguration av "managed schema".
 
@@ -37,6 +33,10 @@ Som superuser på ifrågavarande app-server:
 | **{CONFIG}/solrconfig.xml**                  | **/opt/solr/server/solr/gup-people/conf/** |
 | **{CONFIG}/gup-people/schema.xml**           | **/opt/solr/server/solr/gup-people/conf/** |
 | **{CONFIG}/gup-people/dataimportconfig.xml** | **/opt/solr/server/solr/gup-people/conf/** |
+
+### Separat installation
+
+WRITEME!
 
 ## Postgresql
 
