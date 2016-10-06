@@ -16,23 +16,16 @@
 
 Principen är att ha en solr-instans per miljö så att om **staging** ligger på servern
 **app-staging-1.ub.gu.se**, så har man också en solr-instans för **staging**
-på samma server. När det gäller **production**-miljön hanterar vi den speciellt och den är tänkt att ha
-sin solr-instans på en separat fysisk server.
+på samma server. När det gäller **production**-miljön hanterar vi den speciellt och den är tänkt att ha sin solr-instans på en separat fysisk server.
+Samtliga solr-konfigurationsfiler för gup-server ligger i config-reposet (config/apps/gup-server/solr-config/default/opt/solr/server/solr/), härmed kallat CONF 
 
-Vi använder version 5.3.1 eftersom 6.X inte fungerar för oss p.g.a en annorlunda metod för konfiguration av "managed schema".
-
-Som superuser på ifrågavarande app-server:
-
+- Vi använder version 5.3.1 eftersom 6.X inte fungerar p.g.a ett nytt sätt att konfigurera managed schema.
 - Följ instruktioner i [dokument om Solr](../verktyg/solr.md).
-- Hämta senaste JDBC-driver (t.ex. **postgresql-9.4.1211.jar**) från **https://jdbc.postgresql.org/download.html**
-- Lägg JDBC-drivern i  **/opt/solr/dist** 
-- Kopiera inställningsfiler enligt nedanstående tabell. Med CONFIG nedan avses config-reposet, närmare bestämt **config/apps/gup-server/solr-config/default/opt/solr/server/solr**
-
-| från  | till  | 
-| ---   | --- |
-| **{CONFIG}/solrconfig.xml**                  | **/opt/solr/server/solr/gup-people/conf/** |
-| **{CONFIG}/gup-people/schema.xml**           | **/opt/solr/server/solr/gup-people/conf/** |
-| **{CONFIG}/gup-people/dataimportconfig.xml** | **/opt/solr/server/solr/gup-people/conf/** |
+- 
+- Lägg drivrutiner för postgresql i katalogen **/opt/solr/dist** \(ex postgresql-9.4.1209.jar\)
+- Kopiera **config/solr/solrconfig.xml** från gup-server-repot, lägg den i **/opt/solr/server/solr/gup-people/conf/**.
+- Kopiera **config/solr/people/schema.xml** från gup-server-repot, lägg den i **/opt/solr/server/solr/gup-people/conf/**
+- Kopiera **config/solr/gup-server-staging/opt/solr/server/solr/gup-people/conf/dataimportconfig.xml** från config-repot, till i **/opt/solr/server/solr/gup-people/conf/** på aktuell app-server.
 
 ## Postgresql
 
