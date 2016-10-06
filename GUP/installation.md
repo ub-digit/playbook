@@ -13,11 +13,17 @@
 - Lägg till användarens ssh-nyckel i installer-användarens och app-användarens authorized\_keys filer på respektive server.
 
 ## Solr
+Våra tre olika environments (miljöer) hanteras så att:
 
-Principen är att ha en solr-instans per miljö så att om **staging** ligger på servern
-**app-staging-1.ub.gu.se**, så har man också en solr-instans för **staging**
-på samma server. När det gäller **production**-miljön hanterar vi den speciellt och den är tänkt att ha
-sin solr-instans på en separat fysisk server.
+| miljö          | solr-instans     |
+| ---            | ---              |
+| **lab**        |   lokal          |
+| **staging**    |   lokal          |
+| **dev**        |   lokal          |
+| **production** |   separat        |
+
+**separat**: solr-instans på en separat fysisk server, fr.a. av prestandaskäl.
+**lokal**: solr-installationen på samma maskin som applikationen.
 
 Vi använder version 5.3.1 eftersom 6.X inte fungerar för oss p.g.a en annorlunda metod för konfiguration av "managed schema".
 
