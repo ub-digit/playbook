@@ -1,6 +1,5 @@
 # Installation och konfiguration av Solr (lokalt på utvecklardator)
 
-Exemplets utgångspunkt: man vill rigga solr för utveckling av gup-server.
 ## Installation
 1. Hämta Java (v8 eller senare). Bäst resultat fås via http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html. Välj den senaste (här och nu jdk-8u102-linux-x64.tar.gz).
 2. Hämta solr-5.5.3.tgz (eller motsvarande aktuell version) (http://apache.mirrors.spacedump.net/lucene/solr)
@@ -8,12 +7,10 @@ Exemplets utgångspunkt: man vill rigga solr för utveckling av gup-server.
 4. I /opt: sudo su; 
   * tar xzvf jdk-8u102-linux-x64.tar.gz 
   * tar xzvf solr-5.5.3.tgz
-  Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
-5. Skapa länkarna
+5. Följaktligen kommer uppackningen att skapa katalogerna /opt/jdk1.8.0_102 och /opt/solr-5.5.3.
+6. Skapa länkarna 
   * ```ln -s /opt/jdk1.8.0_102 /opt/java8```
   * ```ln -s /opt/solr-5.5.3 /opt/solr```
-6. - Hämta senaste JDBC-drivern (t.ex. **postgresql-9.4.1211.jar**) från **https://jdbc.postgresql.org/download.html** och kopiera den till **/opt/solr/dist** 
-
 
 Den härpå följande konfigurationen kan försiggå på två sätt - mha. **schema.xml** eller mha. solr's **baskonfiguration**.
 
@@ -23,10 +20,11 @@ Nedanstående konfiguration gäller din lokala utvecklarmaskin. För serverinsta
 1. Gå till /opt/solr
 2. ```sudo su```
 3. Kör solr: ```bin/solr start -a "-Djetty.host=127.0.0.1"```
-4. För att skapa en indexplats (core), kör ```bin/solr create_core -c CORENAME -d basic_configs```
-5. Kopiera in ```schema.xml``` till ```server/solr/CORENAME/conf/schema.xml```
-6. Gå till http://localhost:8983/ eller motsvarande port som rapporteras av start-kommandot ovan.
-7. I sektionen "Core Admin", välj CORENAME och klicka på "Reload"-knappen
+4. konfigurera en core (indexplats)
+  *  ```bin/solr create_core -c CORENAME -d basic_configs```
+  *  Kopiera in ```schema.xml``` till ```server/solr/CORENAME/conf/schema.xml```
+  *  Gå till http://localhost:8983/ eller motsvarande port som rapporteras av start-kommandot ovan.
+  *  I sektionen "Core Admin", välj CORENAME och klicka på "Reload"-knappen
 
 Vid senare förändringar av schema.xml, kör stegen 4-6 ovan.
 
