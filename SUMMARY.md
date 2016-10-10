@@ -35,6 +35,8 @@
    * [CAS](ember/cas.md)
 * [GUP](gup.md)
    * [Installation](GUP/installation.md)
+* [UBNext](ubnext.md)
+  * [Serverkonfiguration](ubnext/serverkonfiguration.md)
+    * [Diverse små komponenter](ubnext/serverkonfiguration/diverse.md)
 * [Ansible](ansible.md)
   - General
-
