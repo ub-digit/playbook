@@ -36,7 +36,7 @@
 * [GUP](gup.md)
    * [Installation](GUP/installation.md)
 * [UBNext](ubnext.md)
-  * [Serverkonfiguration](ubnext/serverkonfiguration.md)
-    * [Diverse små komponenter](ubnext/serverkonfiguration/diverse.md)
+  * [Serverkonfiguration](ubnext/server/konfiguration.md)
+    * [Diverse små komponenter](ubnext/server/konfiguration/diverse.md)
 * [Ansible](ansible.md)
   - General
