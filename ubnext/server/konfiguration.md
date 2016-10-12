@@ -11,7 +11,7 @@ som heter config/servers/www-production-1 och den förkortas nedan som ```${CONF
 - Installera nödvändiga paket
 ```shell
 sudo apt-get update
-sudo apt-get install fail2ban vim ntp git
+sudo apt-get install fail2ban vim ntp git -y
 ```
 
 ### Server-användare
@@ -20,32 +20,35 @@ sudo apt-get install fail2ban vim ntp git
 ```shell
 sudo adduser drupal-deploy
 ```
-- gör henne till en sudo-användare
-- ge henne en .gitconfig-fil
-name: put gitconfig file in place for drupal-deploy user
-```shell
-sudo scp ${CONFIG}/home/drupal-deploy/.gitconfig
-/home/drupal-deploy/.gitconfig
-sudo chown drupal-deploy:drupal-deploy /home/drupal-deploy/.gitconfig
-sudo chmod 664 /home/drupal-deploy/.gitconfig
-```
-
 
 - create tmp directory for drupal-deploy user
 ```shell
 sudo mkdir /home/drupal-deploy/tmp
-sudo chown drupal-deploy:drupal-deploy /home/drupal-deploy/tmp
+sudo chown www-data:www-data /home/drupal-deploy/tmp
 sudo chmod  775 /home/drupal-deploy/tmp
 ```
 
 - Skapa .ssh-katalog för drupal-deploy
-- Kopiera in utvecklarnas publika nycklar
+```shell
+sudo mkdir /home/drupal-deploy/.ssh
+```
+
+- Sätt korrekt ägarskap och rättigheter på .ssh-katalogen.
+```shell
+sudo chown -R drupal-deploy:drupal-deploy /home/drupal-deploy/.ssh
+sudo chmod go-rwx /home/drupal-deploy/.ssh
+```
+
+- Kopiera in utvecklarnas publika nycklar (finns att hämta i config-repositoriet).
 
 - Skapa .ssh-katalog för installer-användaren
+
 - Kopiera utvecklarnas publika nycklar så att de kan logga in med installer-användaren
 
 - Skapa användare för utvecklare
+
 - Gör dem till sudo-användare
+
 - Lägg in publika nycklar för utvecklarna
 
 
@@ -59,21 +62,36 @@ sudo mkdir -p /srv/www/drupal7
 - Instalera mariadb
 
 ```shell
-sudo apt-get install mariadb-server
+sudo apt-get install software-properties-common
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://ftp.ddg.lth.se/mariadb/repo/10.1/ubuntu xenial main'
+sudo apt update
+sudo apt install mariadb-server -y
 ```
 - Kontrollera innehållet i /etc/mysql/my.cnf
 - TODO: vad är en sund databas-konfiguration med avseende på connection-pool, minne etc.
-- Ta bort anonym databasanvändare
-- Ta bort test-databasen
+- Ta bort anonym databasanvändare om den finns.
+- Ta bort test-databasen om den finns.
 
 ## PHP
 
 - installera php-fpm och php-mysql
 ```shell
-sudo apt-get install php-fpm
-sudo apt-get install php-mysql
+sudo apt-get install php-fpm -y
+sudo apt-get install php-mysql -y
 ```
 
+- Kolla att php-fpm körs
+```shell
+sudo systemctl status php7.0-fpm
+```
+
+- Editera php.ini
+Ändra i filen __/etc/php/7.0/fpm/php.ini__ raden med ```cgi.fix_pathinfo=1``` så att den blir ```cgi.fix_pathinfo=0```.
+- Starta om tjänsten
+```shell
+sudo systemctl restart php7.0-fpm
+```
 
 ## Nginx
 
