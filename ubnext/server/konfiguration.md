@@ -38,15 +38,77 @@ sudo chown drupal-deploy:drupal-deploy /home/drupal-deploy/tmp
 sudo chmod  775 /home/drupal-deploy/tmp
 ```
 
-### Server Directories
+- Skapa .ssh-katalog för drupal-deploy
+- Kopiera in utvecklarnas publika nycklar
+
+- Skapa .ssh-katalog för installer-användaren
+- Kopiera utvecklarnas publika nycklar så att de kan logga in med installer-användaren
+
+- Skapa användare för utvecklare
+- Gör dem till sudo-användare
+- Lägg in publika nycklar för utvecklarna
 
 
+### Katalogstrukturer
+```shell
+sudo mkdir -p /srv/www/drupal7
+```
 
 ## Mariadb
 
-### Säkerhet i Mariadb
+- Instalera mariadb
+
+```shell
+sudo apt-get install mariadb-server
+```
+- Kontrollera innehållet i /etc/mysql/my.cnf
+- TODO: vad är en sund databas-konfiguration med avseende på connection-pool, minne etc.
+- Ta bort anonym databasanvändare
+- Ta bort test-databasen
+
+## PHP
+
+- installera php-fpm och php-mysql
+```shell
+sudo apt-get install php-fpm
+sudo apt-get install php-mysql
+```
+
 
 ## Nginx
+
+- Lägg till nginx gpg-nyckel
+  apt_key: id=7BD9BF62 url=http://nginx.org/keys/nginx_signing.key
+
+- Lägg till apt-repositorium för nginx
+```shell
+sudo add-apt-repository ppa:ricotz/testin
+```
+
+  apt_repository: repo='deb http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx' state=present
+```shell
+
+sudo apt-get update
+```
+
+- Intallera nginx
+```shell
+sudo apt-get install nginx
+```
+
+- name: add nginx.conf
+  copy: src=nginx.conf dest=/etc/nginx/nginx.conf mode=644 owner=root group=root
+  notify: restart nginx
+
+- name: create /var/lib/nginx
+  file: path=/var/lib/nginx owner=www-data group=www-data state=directory
+
+- name: create /etc/nginx/{{ item }}
+  file: path=/etc/nginx/{{ item }} owner=root group=root state=directory
+  with_items:
+    - sites-available
+    - sites-enabled
+
 
 ### Generell konfiguration
 
