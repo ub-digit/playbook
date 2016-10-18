@@ -20,7 +20,9 @@ _**Definition of Done**_ Definierar vilka moment som ska utföras innan en speci
   Samtliga kodrader ska köras under en testsvit för Rails applikationer.
 
 ### Deploy till testmiljö genomförd (planerad och införd i JIRA)
-  För att testa kodens deploybarhet, samt möjliggöra extern testning, ska all kod deployas till en testmiljö.
+  För att testa kodens deploybarhet, samt möjliggöra extern testning, ska all kod deployas till en testmiljö. Vanligen är detta "lab". 
+  > 1. Utvecklaren gör "cap lab deploy", "ubdeploy.sh lab" eller motsvarande för aktuellt system.
+  > 2. Utvecklaren flyttar DoD till **Acceptance Test** enligt "Acceptanstester uppfyllda"-punkten.
 
 ### Acceptanstester uppfyllda (planerad och införd i JIRA)
   Produktägaren ska **Acceptanstesta** storyn innan den anses vara **Done**.
