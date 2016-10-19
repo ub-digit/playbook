@@ -166,41 +166,78 @@ sudo apt-get python-mysqldb
 ```bash
 sudo systemctl enable mariadb
 ```
+### MariaDB - säker installation
 
-
-### Mariadb - geerlingguy
-
-- geerlingguy.mysql
+- Ta bort möjligheten att logga in med root från annan maskin
 ```bash
+mysql -NBe "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1')"
 ```
+- Uppdatera löseord för mysql root
+- Kopiera in .my.cnf-filen från config-repot till mysql-användarens hemkatalog: ${hemkatalogen}/.my.cnf # Behövs det här?
+```bash
+sudp cp ${CONFIG}/root/.my.cnf ${hemkatalogen}.my.cnf
+sudo chown root:root .my.cnf
+sudo chmod 0600 .my.cnf
+```
+- Uppdatera MySQL root lösenord för localhost (< 5.7.x).
+- Kontrollera om det finns anonyma MySQL-användare, ta i så fall bort dem
+```bash
+mysql -NBe 'SELECT Host FROM mysql.user WHERE User = ""'
+```
+- Ta bort MySQL test-databas
 
-- include: configure.yml
-- include: secure-installation.yml
-- include: databases.yml
-- include: users.yml
-- include: replication.yml
+### MariaDB - installera databaser
+
+- Se till att databaser finns för UBNext
+  - collation: utf8_general_ci
+  - encoding: utf8
+
+### MariaDB - skapa användare
+- Lägg till databasanvändare för ubnext som kan ansluta från localhost med lösenord
+- Lägg till privilegier för databasanvändare '\*.\*:USAGE'
+
 
 ## PHP med mera
-
-- installera php-fpm och php-mysql
+### Installera PHP och php-paket
 ```shell
-sudo apt-get install php-fpm -y
-sudo apt-get install php-mysql -y
+sudo apt-get install php7.0-fpm -y
+sudo apt-get install php7.0-mysql -y
 ```
+### Övriga PHP-paket att installera
+- php7.0-common
+- php7.0-cli
+- php7.0-dev
+- libpcre3-dev
+- php7.0-gd
+- php7.0-curl
+- php7.0-json
+- php7.0-opcache
+- php7.0-xml
+- php7.0-mbstring
+- php-redis
+
 
 - Kolla att php-fpm körs
 ```shell
 sudo systemctl status php7.0-fpm
 ```
-
+- Kopiear in php.ini från config-reposet
+```shell
+sudo cp ${CONFIG}/etc/php/7.0/cli/php.ini /etc/php/7.0/cli/php.ini
+sudo cp ${CONFIG}/etc/php/7.0/fpm/php.ini /etc/php/7.0/fpm/php.ini
 - Editera php.ini
-Ändra i filen __/etc/php/7.0/fpm/php.ini__ raden med ```;cgi.fix_pathinfo=1``` så att den blir ```cgi.fix_pathinfo=0```.
+TODO: Gå igenom php.ini och verifiera att den passar oss. Städa bort 
+Ändra i filen __/etc/php/7.0/fpm/php.ini__ raden med ```;cgi.fix_pathinfo=1```
+så att den blir ```cgi.fix_pathinfo=0```. Eller se till att raden finns om den saknas.
 - Starta om tjänsten
 ```shell
 sudo systemctl restart php7.0-fpm
 ```
 
-- geerlingguy.php
+- geerlingguy.
+
+
+
 - geerlingguy.php-pecl
 - geerlingguy.php-mysql
 - geerlingguy.composer
@@ -259,22 +296,15 @@ sudo chmod 0755 /var/log/nginx
 
 ### Städa
 Går ut på att ta bort sådant som inte används och som kan störa.
-Titta i ansible-skripten var ganska komplicerade här, men se skripten i
+Ansible-skripten var ganska komplicerade här, men se skripten i
 playbooken för detaljer. Sunt förnuft är användbart.
 
-#### Remove defaults
+#### Ta bort default
 - Avaktivera default siten
 - Ta bort default-konfigurationen
 - Ladda om nginx
 
-#### Remove extras
-- name: Find enabled sites
-- name: Disable unmanaged sites
-- name: Find config files
-- name: Remove unmanaged config files
-- Ladda om nginx
-
-#### Remove unwanted
+#### Ta bort andra oönskade siter och konfig-filer
 - Ta bort oönskade siter
 - Ta bort oönskad konfiguration
 - Ta bort oönskade auth_basic_files i /etc/nginx/auth_basic
@@ -284,13 +314,14 @@ playbooken för detaljer. Sunt förnuft är användbart.
 
 - Kopiera över nginx.conf (huvud-configuration) och eventuella include-konfigurationsfiler, testa konfigen
 ``bash
-if test -e ${CONFIG}/etc/nginx/*.conf ; then sudo cp ${CONFIG}/etc/nginx/*.conf /etc/nginx/ ; sudo nginx -t ; fi
+sudo cp ${CONFIG}/etc/nginx/*.conf /etc/nginx/
+sudo nginx -t
 sudo systemctl restart nginx
 ```
 
 - Lägg eventuellt in auth_basic-filer
 ``bash
-if test -e ${CONFIG}/etc/nginx/auth_basic/*
+if test -n "$(ls -A ${CONFIG}/etc/nginx/auth_basic/)"
 then sudo cp ${CONFIG}/etc/nginx/auth_basic/* /etc/nginx/auth_basic/
 sudo nginx -t
 sudo chown root:www-data /etc/nginx/auth_basic/*
@@ -302,7 +333,7 @@ fi
 
 - Kopiera över eventuella konfigurationsfiler till conf.d och testa ny konfig
 ``bash
-if test -e ${CONFIG}/etc/nginx/conf.d/* ; then sudo cp ${CONFIG}/etc/nginx/conf.d/* /etc/nginx/conf.d/ ; sudo nginx -t ; fi
+if test -n "$(ls -A ${CONFIG}/etc/nginx/conf.d/)" ; then sudo cp ${CONFIG}/etc/nginx/conf.d/* /etc/nginx/conf.d/ ; sudo nginx -t ; fi
 ```
 
 - starta om nginx
