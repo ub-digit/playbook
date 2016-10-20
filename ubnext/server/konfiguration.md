@@ -6,15 +6,8 @@ konfigurerar webservern som ska köra UBNext.
 I vissa instruktioner hämtas filer från config-repositoriet. Däri finns en katalog
 som heter config/servers/www-production-1 och den förkortas nedan som ```${CONFIG}```.
 
-## Diverse grundläggande komponenter
 
-- Installera nödvändiga paket
-```shell
-sudo apt-get update
-sudo apt-get install fail2ban vim ntp git -y
-```
-
-### Server-användare
+## Server-användare
 
 - skapa användaren drupal-deploy
 ```shell
@@ -52,25 +45,19 @@ sudo chmod go-rwx /home/drupal-deploy/.ssh
 - Lägg in publika nycklar för utvecklarna
 
 
-### Katalogstrukturer
+## Katalogstrukturer
 ```shell
 sudo mkdir -p /srv/www/drupal7
 ```
-
-
-
----
----
-
-
-
-# Config a la ubn-vm
 
 ## Grundläggande paket med mera
 
 ```bash
 sudo apt-get update
 sudo apt-get install curl -y
+sudo apt-get install git -y
+sudo apt-get install ntp -y
+sudo apt-get install fail2ban -y
 sudo apt-get install python-apt -y
 sudo apt-get install python-pycurl -y
 sudo apt-get install build-essential -y
@@ -116,12 +103,6 @@ sudo chmod 0755 /etc/init.d/firewall
 sudo systemctl enable firewall.service
 ```
 
-## Installera git
-```bash
-sudo apt-get install git
-```
-
-
 ## Installera certifikat
 - kopiera var och en av serverns privata nycklar
 ```bash
@@ -138,12 +119,10 @@ sudo chmod 0644 /etc/ssl/certs/${CERT_FILE}
 ```
 
 
-## Installera Mariadb
+## Mariadb
 
 
-### Mariadb - mine
-
-- Instalera mariadb
+### Installation
 
 ```shell
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
@@ -153,20 +132,18 @@ sudo apt-get install software-properties-common
 sudo apt-get install mariadb-server -y
 sudo apt-get python-mysqldb
 ```
+
 - Kontrollera innehållet i /etc/mysql/my.cnf
-
-
 - Skapa slow-query-log (TODO: fungerar detta i MariaDB?) (som ska ägas av mysql-användaren chown:mysql:mysql chmod: 0640)
 - Skapa Error-log (som ska ägas av mysql-användaren chown:mysql:mysql chmod: 0640)
 - TODO: vad är en sund databas-konfiguration med avseende på connection-pool, minne etc.
 - Ta bort anonym databasanvändare om den finns.
 - Ta bort test-databasen om den finns.
-
 - Aktivera MariaDB som en serverprocess
 ```bash
 sudo systemctl enable mariadb
 ```
-### MariaDB - säker installation
+### Höja säkerheten i installationen
 
 - Ta bort möjligheten att logga in med root från annan maskin
 ```bash
@@ -185,16 +162,6 @@ sudo chmod 0600 .my.cnf
 mysql -NBe 'SELECT Host FROM mysql.user WHERE User = ""'
 ```
 - Ta bort MySQL test-databas
-
-### MariaDB - installera databaser
-
-- Se till att databaser finns för UBNext
-  - collation: utf8_general_ci
-  - encoding: utf8
-
-### MariaDB - skapa användare
-- Lägg till databasanvändare för ubnext som kan ansluta från localhost med lösenord
-- Lägg till privilegier för databasanvändare '\*.\*:USAGE'
 
 
 ## PHP med mera
@@ -226,7 +193,7 @@ sudo systemctl status php7.0-fpm
 sudo cp ${CONFIG}/etc/php/7.0/cli/php.ini /etc/php/7.0/cli/php.ini
 sudo cp ${CONFIG}/etc/php/7.0/fpm/php.ini /etc/php/7.0/fpm/php.ini
 - Editera php.ini
-TODO: Gå igenom php.ini och verifiera att den passar oss. Städa bort 
+TODO: Gå igenom php.ini och verifiera att den passar oss. Städa bort
 Ändra i filen __/etc/php/7.0/fpm/php.ini__ raden med ```;cgi.fix_pathinfo=1```
 så att den blir ```cgi.fix_pathinfo=0```. Eller se till att raden finns om den saknas.
 - Starta om tjänsten
@@ -234,19 +201,23 @@ så att den blir ```cgi.fix_pathinfo=0```. Eller se till att raden finns om den 
 sudo systemctl restart php7.0-fpm
 ```
 
-- geerlingguy.
-
-
-
-- geerlingguy.php-pecl
-- geerlingguy.php-mysql
 - geerlingguy.composer
-- geerlingguy.drush
-- php.xdebug
+- Hämta senaste från https://composer.github.io/pubkeys.html
 ```bash
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 ```
 
-
+- Hämta drush från Github
+```bash
+cd /user/local/share/
+sudo git clone https://github.com/drush-ops/drush.git
+cd drush
+composer install --prefer-source --no-interaction
+sudo ln -s /usr/local/share/drush/drush /usr/local/bin/drush
+/usr/local/bin/drush
+```
 
 ## Installera Nginx
 
@@ -416,42 +387,58 @@ sudo systemctl restart apache2
 sudo systemctl enable apache2
 ```
 
-
-
-
-## Säkerhet vid produktionsmiljö
-- geerlingguy.security
-```bash
-```
-
-
----
-
 ## SSH
-- include: tasks/sshd.yml
-- include: tasks/www.yml
-- include: tasks/apparmor.yml
+
+- Låt inga locale-miljövariabler skickas över SSH.
+  - Redigera ```/etc/ssh/sshd_config```
+  - Ta bort raden : ```AcceptEnv LANG```
+
+
+- Set nicer permissions on Apache log directory.
 ```bash
+sudo chmod -R 0755 /var/log/apache2
 ```
+- Se till att grupperna admin och dialout finns.
+- Ensure www-data user is in dialout group
+
+
+- Om slow-query-log används - se till att AppArmor-profile för MySQL är avaktiverad
+sudo ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/usr.sbin.mysqld
+mysql_slow_query_log_enabled
+- Starta ev om apparmor
+
 
 ## Hämta ner ubnext-kod
 - tasks/drupal7-ubn-dev.yml
 ```bash
 ```
 
+
 ## Skapa drush-aliases
 ```bash
 ```
+
+## Skapa databaser för UBNext
+
+- Se till att databaser finns för UBNext
+  - collation: utf8_general_ci
+  - encoding: utf8
+
+### Skapa databasanvändare för UBNext
+- Lägg till databasanvändare för ubnext som kan ansluta från localhost med lösenord
+- Lägg till privilegier för databasanvändare '\*.\*:USAGE'
 
 ## Importera databas från produktionsmiljön
 tasks/drupal7-ubn-dev-db.yml
 ```bash
 ```
 
-## Sätt upp drupal cron
-tasks/cron.yml
-```bash
+## Sätt upp cron
+```
+*/15 * * * * drush -r /srv/drupal7/ubnext/web core-cron
 ```
 
-```bash
-```
+
+## Installera Varnish
+sudo apt-get update
+sudo apt-get install varnish
