@@ -4,6 +4,7 @@
    * [Bootstrap 3](bootstrap_3.md)
 * [GitHub](github.md)
    * [Git](git.md)
+   * Open Source-utveckling
 * [Rails](rails.md)
    * [Testning](rails/testning.md)
        * [Shoulda](rails/testning/shoulda.md)
@@ -36,6 +37,7 @@
 * [GUP](gup.md)
    * [Installation](GUP/installation.md)
 * [UBNext](ubnext.md)
-  * [Serverkonfiguration](ubnext/server/konfiguration.md)
+   * [Serverkonfiguration](ubnext/server/konfiguration.md)
 * [Ansible](ansible.md)
-  - General
+   * General
+
