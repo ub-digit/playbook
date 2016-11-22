@@ -4,7 +4,7 @@
    * [Bootstrap 3](bootstrap_3.md)
 * [GitHub](github.md)
    * [Git](git.md)
-   * Open Source-utveckling
+   * [Open Source-utveckling](open_source-utveckling.md)
 * [Rails](rails.md)
    * [Testning](rails/testning.md)
        * [Shoulda](rails/testning/shoulda.md)
